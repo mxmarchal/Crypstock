@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		58B86C1F257D456A0072782B /* CrypstockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B86C1E257D456A0072782B /* CrypstockApp.swift */; };
-		58B86C21257D456A0072782B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B86C20257D456A0072782B /* ContentView.swift */; };
 		58B86C23257D456D0072782B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58B86C22257D456D0072782B /* Assets.xcassets */; };
 		58B86C26257D456D0072782B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58B86C25257D456D0072782B /* Preview Assets.xcassets */; };
 		58B86C31257D456D0072782B /* CrypstockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B86C30257D456D0072782B /* CrypstockTests.swift */; };
 		58B86C3C257D456D0072782B /* CrypstockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B86C3B257D456D0072782B /* CrypstockUITests.swift */; };
+		58B86C50257D46A70072782B /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B86C4F257D46A70072782B /* SignInView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +35,6 @@
 /* Begin PBXFileReference section */
 		58B86C1B257D456A0072782B /* Crypstock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypstock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58B86C1E257D456A0072782B /* CrypstockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrypstockApp.swift; sourceTree = "<group>"; };
-		58B86C20257D456A0072782B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		58B86C22257D456D0072782B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58B86C25257D456D0072782B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		58B86C27257D456D0072782B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +44,7 @@
 		58B86C37257D456D0072782B /* CrypstockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrypstockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58B86C3B257D456D0072782B /* CrypstockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrypstockUITests.swift; sourceTree = "<group>"; };
 		58B86C3D257D456D0072782B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58B86C4F257D46A70072782B /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,10 +96,10 @@
 			isa = PBXGroup;
 			children = (
 				58B86C1E257D456A0072782B /* CrypstockApp.swift */,
-				58B86C20257D456A0072782B /* ContentView.swift */,
 				58B86C22257D456D0072782B /* Assets.xcassets */,
 				58B86C27257D456D0072782B /* Info.plist */,
 				58B86C24257D456D0072782B /* Preview Content */,
+				58B86C4F257D46A70072782B /* SignInView.swift */,
 			);
 			path = Crypstock;
 			sourceTree = "<group>";
@@ -259,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58B86C21257D456A0072782B /* ContentView.swift in Sources */,
+				58B86C50257D46A70072782B /* SignInView.swift in Sources */,
 				58B86C1F257D456A0072782B /* CrypstockApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,6 +419,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Crypstock/Preview Content\"";
+				DEVELOPMENT_TEAM = UMGJT7SGCE;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Crypstock/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -440,6 +441,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Crypstock/Preview Content\"";
+				DEVELOPMENT_TEAM = UMGJT7SGCE;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Crypstock/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

@@ -11,7 +11,7 @@ import SwiftUI
 struct CrypstockApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SignInView()
         }
     }
 }
