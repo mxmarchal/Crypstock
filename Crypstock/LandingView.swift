@@ -10,11 +10,9 @@ import SwiftUI
 struct LandingScroll: View {
     var body: some View {
         TabView {
-            ForEach(0..<5) { i in
+            ForEach(1..<3) { i in
                 VStack {
-                    Color(.black)
-                    Spacer()
-                    Text("Row: \(i)").foregroundColor(.white)
+                    Image("LandingSlide\(i)")
                 }.clipShape(RoundedRectangle(cornerRadius: 10.0, style:.continuous))
             }
             .padding(.bottom, 50)
@@ -35,9 +33,14 @@ struct LandingView: View {
                 LazyHStack {
                     LandingScroll()
                 }
-                Button(action: {}) {
-                    Text("Sign In")
-                }
+                HStack {
+                    Button(action: {}) {
+                        Text("Sign In").frame(minWidth: 0, maxWidth: .infinity, minHeight: 40, maxHeight: 40)
+                    }.foregroundColor(.blue).background(Color(.white)).cornerRadius(50)
+                    Button(action: {}) {
+                        Text("Sign Up").frame(minWidth: 0, maxWidth: .infinity, minHeight: 40, maxHeight: 40)
+                    }.foregroundColor(.blue).background(Color(.white)).cornerRadius(50)
+                }.padding([.leading, .trailing], 40).padding(.top, 60)
             }
         }
     }
