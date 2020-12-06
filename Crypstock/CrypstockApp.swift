@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct CrypstockApp: App {
+
     var body: some Scene {
         WindowGroup {
-            LandingView()
+            LandingParentView()
         }
     }
 }

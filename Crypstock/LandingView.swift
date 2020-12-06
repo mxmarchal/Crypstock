@@ -23,7 +23,33 @@ struct LandingScroll: View {
     }
 }
 
+struct LandingButtons: View {
+    struct ButtonStyle: ViewModifier {
+        func body(content: Content) -> some View {
+            content.foregroundColor(.blue).background(Color(.white)).cornerRadius(50)
+        }
+    }
+    
+    struct ButtonTextStyle: ViewModifier {
+        func body(content: Content) -> some View {
+            content.frame(minWidth: 0, maxWidth: .infinity, minHeight: 40, maxHeight: 40)
+        }
+    }
+    
+    var body: some View {
+        HStack {
+            Button(action: {}) {
+                Text("Sign In").modifier(ButtonTextStyle())
+            }.modifier(ButtonStyle())
+            Button(action: {}) {
+                Text("Sign Up").modifier(ButtonTextStyle())
+            }.modifier(ButtonStyle())
+        }.padding([.leading, .trailing], 40).padding(.top, 60)
+    }
+}
+
 struct LandingView: View {
+    @Binding var childView: String;
     let backgroundGradientColors: Gradient = Gradient(colors: [Color(red: 0.0, green: 0.7058823529, blue: 0.8588235294), Color(red: 0, green: 0.5137254902, blue: 0.6901960784)])
     var body: some View {
         ZStack {
@@ -33,14 +59,12 @@ struct LandingView: View {
                 LazyHStack {
                     LandingScroll()
                 }
-                HStack {
-                    Button(action: {}) {
-                        Text("Sign In").frame(minWidth: 0, maxWidth: .infinity, minHeight: 40, maxHeight: 40)
-                    }.foregroundColor(.blue).background(Color(.white)).cornerRadius(50)
-                    Button(action: {}) {
-                        Text("Sign Up").frame(minWidth: 0, maxWidth: .infinity, minHeight: 40, maxHeight: 40)
-                    }.foregroundColor(.blue).background(Color(.white)).cornerRadius(50)
-                }.padding([.leading, .trailing], 40).padding(.top, 60)
+                LandingButtons()
+                Button(action: {
+                    childView = "SIGNIN_VIEW"
+                }){
+                    Text("test");
+                }
             }
         }
     }
@@ -48,6 +72,6 @@ struct LandingView: View {
 
 struct LandingView_Previews: PreviewProvider {
     static var previews: some View {
-        LandingView()
+        LandingView(childView: .constant(""))
     }
 }
