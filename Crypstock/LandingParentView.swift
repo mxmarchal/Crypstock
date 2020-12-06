@@ -16,7 +16,7 @@ struct LandingParentView: View {
             case "SIGNIN_VIEW":
                 SignInView(childView: $childView)
             case "SIGNUP_VIEW":
-                SignInView(childView: $childView)
+                SignUpView(childView: $childView)
             default:
                 LandingView(childView: $childView)
         }

@@ -24,6 +24,8 @@ struct LandingScroll: View {
 }
 
 struct LandingButtons: View {
+    @Binding var childView: String;
+
     struct ButtonStyle: ViewModifier {
         func body(content: Content) -> some View {
             content.foregroundColor(.blue).background(Color(.white)).cornerRadius(50)
@@ -38,10 +40,14 @@ struct LandingButtons: View {
     
     var body: some View {
         HStack {
-            Button(action: {}) {
+            Button(action: {
+                childView = "SIGNIN_VIEW"
+            }) {
                 Text("Sign In").modifier(ButtonTextStyle())
             }.modifier(ButtonStyle())
-            Button(action: {}) {
+            Button(action: {
+                childView = "SIGNUP_VIEW"
+            }) {
                 Text("Sign Up").modifier(ButtonTextStyle())
             }.modifier(ButtonStyle())
         }.padding([.leading, .trailing], 40).padding(.top, 60)
@@ -59,12 +65,7 @@ struct LandingView: View {
                 LazyHStack {
                     LandingScroll()
                 }
-                LandingButtons()
-                Button(action: {
-                    childView = "SIGNIN_VIEW"
-                }){
-                    Text("test");
-                }
+                LandingButtons(childView: $childView)
             }
         }
     }
