@@ -18,7 +18,18 @@ struct LandingParentView: View {
             case "SIGNUP_VIEW":
                 SignUpView(childView: $childView)
             default:
-                LandingView(childView: $childView)
+                TabView {
+                    PortfolioView()
+                         .tabItem {
+                            Image(systemName: "phone.fill")
+                            Text("Portfolio")
+                          }
+                    PortfolioView()
+                         .tabItem {
+                            Image(systemName: "phone.fill")
+                            Text("Portfolio2")
+                          }
+                }
         }
     }
 }

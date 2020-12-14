@@ -9,7 +9,10 @@ import SwiftUI
 
 struct SignInView: View {
     @Binding var childView: String;
+    @State var username: String = ""
+
     let backgroundGradientColors: Gradient = Gradient(colors: [Color(red: 0.0, green: 0.7058823529, blue: 0.8588235294), Color(red: 0, green: 0.5137254902, blue: 0.6901960784)])
+    
     var body: some View {
         ZStack {
             LinearGradient(gradient: backgroundGradientColors, startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
@@ -18,9 +21,15 @@ struct SignInView: View {
                 Spacer()
                 ZStack {
                     RoundedRectangle(cornerRadius: 20).foregroundColor(.white).frame(minWidth: 0, maxWidth: 350, maxHeight: 450, alignment: .center)
-                    HStack {
-                        Text("Sign In")
-                    }
+                    VStack {
+                        Text("Sign In").font(.largeTitle)
+                        TextField("Username / E-mail address", text: $username)
+                        Button(action: {
+                            childView = "APP"
+                        }, label: {
+                            Text("Suivant")
+                        })
+                    }.padding(20)
                 }
                 Spacer()
             }

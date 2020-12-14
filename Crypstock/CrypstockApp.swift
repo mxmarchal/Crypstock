@@ -11,12 +11,10 @@ import SwiftUI
 struct CrypstockApp: App {
 
     var body: some Scene {
-        /*
-         TODO: Find a way to have tabbar and this one
         WindowGroup {
             LandingParentView()
         }
-         */
+        /*
         WindowGroup {
             TabView {
                 PortfolioView()
@@ -31,5 +29,6 @@ struct CrypstockApp: App {
                       }
             }
         }
+        */
     }
 }
