@@ -11,8 +11,25 @@ import SwiftUI
 struct CrypstockApp: App {
 
     var body: some Scene {
+        /*
+         TODO: Find a way to have tabbar and this one
         WindowGroup {
             LandingParentView()
+        }
+         */
+        WindowGroup {
+            TabView {
+                PortfolioView()
+                     .tabItem {
+                        Image(systemName: "phone.fill")
+                        Text("Portfolio")
+                      }
+                PortfolioView()
+                     .tabItem {
+                        Image(systemName: "phone.fill")
+                        Text("Portfolio2")
+                      }
+            }
         }
     }
 }
