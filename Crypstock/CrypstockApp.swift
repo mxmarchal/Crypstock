@@ -9,9 +9,26 @@ import SwiftUI
 
 @main
 struct CrypstockApp: App {
+
     var body: some Scene {
         WindowGroup {
-            SignInView()
+            LandingParentView()
         }
+        /*
+        WindowGroup {
+            TabView {
+                PortfolioView()
+                     .tabItem {
+                        Image(systemName: "phone.fill")
+                        Text("Portfolio")
+                      }
+                PortfolioView()
+                     .tabItem {
+                        Image(systemName: "phone.fill")
+                        Text("Portfolio2")
+                      }
+            }
+        }
+        */
     }
 }
