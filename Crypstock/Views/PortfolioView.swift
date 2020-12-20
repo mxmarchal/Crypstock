@@ -20,9 +20,9 @@ struct PortfolioView: View {
             List(coinsData) {
                 coin in
                     ZStack {
-                        CoinItemView(name: coin.name, shortName: coin.shortName, currentValue: coin.currentValue, primaryColor: Color(hex: coin.primaryColor), secondaryColor: Color(hex: coin.secondaryColor))
-                        NavigationLink(destination: /*@START_MENU_TOKEN@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
+                        NavigationLink(destination: Text("\(coin.name)")) {
                         }.opacity(0.0)
+                        CoinItemView(name: coin.name, shortName: coin.shortName, currentValue: coin.currentValue, primaryColor: Color(hex: coin.primaryColor), secondaryColor: Color(hex: coin.secondaryColor))
                     }
             }
             .navigationBarTitle("Portfolio")
@@ -32,6 +32,8 @@ struct PortfolioView: View {
 
 struct PortfolioView_Previews: PreviewProvider {
     static var previews: some View {
-        PortfolioView()
+        Group {
+            PortfolioView().environment(\.colorScheme, .light)
+        }
     }
 }

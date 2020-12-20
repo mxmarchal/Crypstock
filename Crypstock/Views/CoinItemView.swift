@@ -28,6 +28,7 @@ struct CoinItemView: View {
                         VStack(alignment: .trailing) {
                             Text("1\(shortName) = \(currentValueFormatted)$").fontWeight(.semibold)
                             Text("12390 $USD").fontWeight(.bold).font(.title2)
+                            //Check currencies swift google
                         }
                     }
                     CoinItemGraph(graphData: randomDataGraph)

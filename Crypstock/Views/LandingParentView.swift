@@ -36,6 +36,6 @@ struct LandingParentView: View {
 
 struct LandingParentView_Previews: PreviewProvider {
     static var previews: some View {
-        LandingParentView()
+        LandingParentView().environment(\.colorScheme, .dark)
     }
 }
