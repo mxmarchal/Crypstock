@@ -9,14 +9,16 @@ import SwiftUI
 
 struct LandingParentView: View {
     @State private var childView = "LANDING_VIEW"
+    @State private var user:User = User()
+
     var body: some View {
         switch(childView) {
             case "LANDING_VIEW":
                 LandingView(childView: $childView)
             case "SIGNIN_VIEW":
-                SignInView(childView: $childView)
+                SignInView(childView: $childView, user: $user)
             case "SIGNUP_VIEW":
-                SignUpView(childView: $childView)
+                SignUpView(childView: $childView, user: $user)
             default:
                 TabView {
                     PortfolioView()

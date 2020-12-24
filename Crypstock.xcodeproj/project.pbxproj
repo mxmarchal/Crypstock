@@ -14,14 +14,14 @@
 		5832334025870D09009185DF /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832333F25870D09009185DF /* UIColorExtension.swift */; };
 		58323353258735D9009185DF /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58323352258735D9009185DF /* Coin.swift */; };
 		5832335825873633009185DF /* CoinItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832335725873633009185DF /* CoinItemView.swift */; };
-		588F5C4C258F84FD00ABD05C /* UserManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588F5C4B258F84FD00ABD05C /* UserManagement.swift */; };
-		588F5C5D258F86D900ABD05C /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 588F5C5C258F86D900ABD05C /* GRDB */; };
+		589B0CA625950404002C8BA0 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 589B0CA525950404002C8BA0 /* SQLite */; };
 		58B86C1F257D456A0072782B /* CrypstockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B86C1E257D456A0072782B /* CrypstockApp.swift */; };
 		58B86C23257D456D0072782B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58B86C22257D456D0072782B /* Assets.xcassets */; };
 		58B86C26257D456D0072782B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58B86C25257D456D0072782B /* Preview Assets.xcassets */; };
 		58B86C31257D456D0072782B /* CrypstockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B86C30257D456D0072782B /* CrypstockTests.swift */; };
 		58B86C3C257D456D0072782B /* CrypstockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B86C3B257D456D0072782B /* CrypstockUITests.swift */; };
 		58B86C50257D46A70072782B /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B86C4F257D46A70072782B /* SignInView.swift */; };
+		58EB45C22594FAA500D4556E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EB45C12594FAA500D4556E /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +49,6 @@
 		5832333F25870D09009185DF /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		58323352258735D9009185DF /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		5832335725873633009185DF /* CoinItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinItemView.swift; sourceTree = "<group>"; };
-		588F5C4B258F84FD00ABD05C /* UserManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagement.swift; sourceTree = "<group>"; };
 		58B86C1B257D456A0072782B /* Crypstock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypstock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58B86C1E257D456A0072782B /* CrypstockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrypstockApp.swift; sourceTree = "<group>"; };
 		58B86C22257D456D0072782B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,6 +61,7 @@
 		58B86C3B257D456D0072782B /* CrypstockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrypstockUITests.swift; sourceTree = "<group>"; };
 		58B86C3D257D456D0072782B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58B86C4F257D46A70072782B /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		58EB45C12594FAA500D4556E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				588F5C5D258F86D900ABD05C /* GRDB in Frameworks */,
+				589B0CA625950404002C8BA0 /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +134,6 @@
 		58B86C1D257D456A0072782B /* Crypstock */ = {
 			isa = PBXGroup;
 			children = (
-				588F5C4B258F84FD00ABD05C /* UserManagement.swift */,
 				5832334C25873593009185DF /* Extensions */,
 				58B86C1E257D456A0072782B /* CrypstockApp.swift */,
 				58B86C22257D456D0072782B /* Assets.xcassets */,
@@ -142,6 +141,7 @@
 				58B86C24257D456D0072782B /* Preview Content */,
 				5832334525873577009185DF /* Views */,
 				58323352258735D9009185DF /* Coin.swift */,
+				58EB45C12594FAA500D4556E /* User.swift */,
 			);
 			path = Crypstock;
 			sourceTree = "<group>";
@@ -189,7 +189,7 @@
 			);
 			name = Crypstock;
 			packageProductDependencies = (
-				588F5C5C258F86D900ABD05C /* GRDB */,
+				589B0CA525950404002C8BA0 /* SQLite */,
 			);
 			productName = Crypstock;
 			productReference = 58B86C1B257D456A0072782B /* Crypstock.app */;
@@ -263,7 +263,7 @@
 			);
 			mainGroup = 58B86C12257D45690072782B;
 			packageReferences = (
-				588F5C5B258F86D900ABD05C /* XCRemoteSwiftPackageReference "GRDB.swift" */,
+				589B0CA425950404002C8BA0 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
 			);
 			productRefGroup = 58B86C1C257D456A0072782B /* Products */;
 			projectDirPath = "";
@@ -314,8 +314,8 @@
 				582316F8257D6DDA00601F95 /* LandingView.swift in Sources */,
 				58B86C50257D46A70072782B /* SignInView.swift in Sources */,
 				5832335825873633009185DF /* CoinItemView.swift in Sources */,
-				588F5C4C258F84FD00ABD05C /* UserManagement.swift in Sources */,
 				58323353258735D9009185DF /* Coin.swift in Sources */,
+				58EB45C22594FAA500D4556E /* User.swift in Sources */,
 				58B86C1F257D456A0072782B /* CrypstockApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,21 +634,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		588F5C5B258F86D900ABD05C /* XCRemoteSwiftPackageReference "GRDB.swift" */ = {
+		589B0CA425950404002C8BA0 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/groue/GRDB.swift.git";
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.2.0;
+				minimumVersion = 0.12.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		588F5C5C258F86D900ABD05C /* GRDB */ = {
+		589B0CA525950404002C8BA0 /* SQLite */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 588F5C5B258F86D900ABD05C /* XCRemoteSwiftPackageReference "GRDB.swift" */;
-			productName = GRDB;
+			package = 589B0CA425950404002C8BA0 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

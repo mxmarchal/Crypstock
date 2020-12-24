@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SignUpView: View {
     @Binding var childView: String;
+    @Binding var user: User
+
     let backgroundGradientColors: Gradient = Gradient(colors: [Color(red: 0.0, green: 0.7058823529, blue: 0.8588235294), Color(red: 0, green: 0.5137254902, blue: 0.6901960784)])
     var body: some View {
         ZStack {
@@ -25,12 +27,5 @@ struct SignUpView: View {
                 Spacer()
             }
         }
-    }
-}
-
-struct SignUpView_Previews: PreviewProvider {
-    @State private var childView = "LANDING_VIEW"
-    static var previews: some View {
-        SignUpView(childView: .constant(""))
     }
 }

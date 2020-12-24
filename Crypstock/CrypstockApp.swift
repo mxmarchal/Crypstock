@@ -14,21 +14,5 @@ struct CrypstockApp: App {
         WindowGroup {
             LandingParentView()
         }
-        /*
-        WindowGroup {
-            TabView {
-                PortfolioView()
-                     .tabItem {
-                        Image(systemName: "phone.fill")
-                        Text("Portfolio")
-                      }
-                PortfolioView()
-                     .tabItem {
-                        Image(systemName: "phone.fill")
-                        Text("Portfolio2")
-                      }
-            }
-        }
-        */
     }
 }
