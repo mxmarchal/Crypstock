@@ -48,8 +48,19 @@ class User: Identifiable {
         }
     }
     
-    func getUser(email: String) {
+    func getUser(inputEmail: String, inputPassword: String) -> Bool {
+        do {
+            let query = try db!.pluck(usersTable.filter(email == inputEmail).filter(password == inputPassword))
+            if query == nil {
+                return false
+            }
+            return true
+        } catch {
+            print("An error occured while selec user from 'users' table")
+            return false
+        }
     }
+    
     
     func createUser(inputEmail: String, inputPassword: String) {
         do {

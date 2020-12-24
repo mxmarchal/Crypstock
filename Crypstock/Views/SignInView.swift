@@ -10,7 +10,10 @@ import SwiftUI
 struct SignInView: View {
     @Binding var childView: String
     @Binding var user: User
+    
+    //form
     @State var username: String = ""
+    @State var password: String = ""
     
 
     let backgroundGradientColors: Gradient = Gradient(colors: [Color(red: 0.0, green: 0.7058823529, blue: 0.8588235294), Color(red: 0, green: 0.5137254902, blue: 0.6901960784)])
@@ -20,23 +23,47 @@ struct SignInView: View {
             LinearGradient(gradient: backgroundGradientColors, startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
             VStack {
             Image("logo")
-                Spacer()
                 ZStack {
-                    RoundedRectangle(cornerRadius: 20).foregroundColor(.white).frame(minWidth: 0, maxWidth: 350, maxHeight: 450, alignment: .center)
                     VStack {
-                        Text("Sign In").font(.largeTitle)
-                        TextField("Username / E-mail address", text: $username)
-                        Button(action: {
-                            user.createUser(inputEmail: "maxence.marchal@gmail.com", inputPassword: "password")
-                        }, label: {
-                            Text("Test user")
-                        })
-                        Button(action: {
-                            childView = "APP"
-                        }, label: {
-                            Text("Next")
-                        })
-                    }.padding(20)
+                        Text("Sign In")
+                            .fontWeight(.bold)
+                            .multilineTextAlignment(.leading)
+                            .padding(.horizontal, 23.0)
+                            .foregroundColor(.white)
+                            .font(.title)
+                        HStack {
+                            Image(systemName: "person").foregroundColor(.secondary)
+                            TextField("E-mail", text: $username).foregroundColor(.black).autocapitalization(.none)
+                        }
+                        .padding()
+                        .background(Color.white)
+                        .cornerRadius(10)
+                        HStack {
+                            Image(systemName: "person").foregroundColor(.secondary)
+                            SecureField("Password", text: $password).foregroundColor(.black)
+                        }
+                        .padding()
+                        .background(Color.white)
+                        .cornerRadius(10)
+                        HStack {
+                            Spacer()
+                            HStack {
+                                Button(action: {
+                                    let requestStatus = user.getUser(inputEmail: username, inputPassword: password)
+                                    if requestStatus {
+                                        childView = "APP"
+                                    }
+                                }, label: {
+                                    Text("Continue ")
+                                })
+                            }
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(10)
+                        }
+                        .padding(.top, 11.0)
+                    }
+                    .padding(.horizontal, 23.0)
                 }
                 Spacer()
             }
