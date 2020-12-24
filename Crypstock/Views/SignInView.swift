@@ -43,3 +43,22 @@ struct SignInView: View {
         }
     }
 }
+
+/*
+    IMPORTANT:
+    This container exist because of binding User class for SignInView.
+    With this container, I can still do the preview without any problem.
+*/
+struct SignInView_Previews_Container: View {
+    @State private var user:User = User()
+    
+    var body: some View {
+        SignInView(childView: .constant(""), user: $user)
+    }
+}
+
+struct SignInView_Previews: PreviewProvider {
+    static var previews: some View {
+        SignInView_Previews_Container()
+    }
+}
