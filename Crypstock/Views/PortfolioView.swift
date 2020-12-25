@@ -10,6 +10,9 @@ import Combine
 
 
 struct PortfolioView: View {
+    @Binding var childView: String
+    @Binding var user: User
+
     let coinsData: [Coin] =
         [Coin(name: "Bitcoin", shortName: "BTC", currentValue: 15721.79, primaryColor: "#FDC830", secondaryColor: "#F37335"),
          Coin(name: "Ethereum", shortName: "ETH", currentValue: 584.67, primaryColor: "#8E2DE2", secondaryColor: "#4A00E0")
@@ -32,8 +35,14 @@ struct PortfolioView: View {
 
 struct PortfolioView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            PortfolioView().environment(\.colorScheme, .light)
-        }
+        PortfolioView_Previews_Container()
+    }
+}
+
+struct PortfolioView_Previews_Container: View {
+    @State private var user:User = User()
+    
+    var body: some View {
+        PortfolioView(childView: .constant(""), user: $user)
     }
 }

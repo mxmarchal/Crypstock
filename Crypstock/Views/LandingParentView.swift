@@ -21,12 +21,12 @@ struct LandingParentView: View {
                 SignUpView(childView: $childView, user: $user)
             default:
                 TabView {
-                    PortfolioView()
+                    PortfolioView(childView: $childView, user: $user)
                          .tabItem {
                             Image(systemName: "phone.fill")
                             Text("Portfolio")
                           }
-                    PortfolioView()
+                    PortfolioView(childView: $childView, user: $user)
                          .tabItem {
                             Image(systemName: "phone.fill")
                             Text("Portfolio2")

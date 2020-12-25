@@ -9,11 +9,15 @@ import Foundation
 import SQLite
 
 class User: Identifiable {
+    //Database
     var db: Connection? = nil;
     let usersTable = Table("users")
-    let id = Expression<Int64>("id")
-    let email = Expression<String>("email")
-    let password = Expression<String>("password")
+    let cId = Expression<Int64>("id")
+    let cEmail = Expression<String>("email")
+    let cPassword = Expression<String>("password")
+    
+    //Data
+    var email: String? = ""
     
     init() {
         initDatabase()
@@ -27,7 +31,7 @@ class User: Identifiable {
                 .documentDirectory, .userDomainMask, true
             ).first!
             self.db = try Connection("\(path)/crypstock.sqlite3")
-            print("DB created")
+            print("DB created/opened")
         } catch {
             self.db = nil
             print("An error occured while opening database")
@@ -38,9 +42,9 @@ class User: Identifiable {
 
         do {
             try db!.run(usersTable.create(ifNotExists: true) { t in
-                t.column(id, primaryKey: .autoincrement)
-                t.column(email, unique: true, check: email.like("%@%"))
-                t.column(password)
+                t.column(cId, primaryKey: .autoincrement)
+                t.column(cEmail, unique: true, check: cEmail.like("%@%"))
+                t.column(cPassword)
             })
             print("Table 'users' created")
         } catch {
@@ -50,10 +54,11 @@ class User: Identifiable {
     
     func getUser(inputEmail: String, inputPassword: String) -> Bool {
         do {
-            let query = try db!.pluck(usersTable.filter(email == inputEmail).filter(password == inputPassword))
+            let query = try db!.pluck(usersTable.filter(cEmail == inputEmail).filter(cPassword == inputPassword))
             if query == nil {
                 return false
             }
+            email = try query?.get(cEmail) //Set email to my data
             return true
         } catch {
             print("An error occured while selec user from 'users' table")
@@ -64,37 +69,10 @@ class User: Identifiable {
     
     func createUser(inputEmail: String, inputPassword: String) {
         do {
-            let rowId = try db!.run(usersTable.insert(email <- inputEmail, password <- inputPassword))
+            let rowId = try db!.run(usersTable.insert(cEmail <- inputEmail, cPassword <- inputPassword))
             print("User \(inputEmail) added. (RowID: \(rowId))")
         } catch {
             print("An error occured while inserting user into 'users' table")
         }
     }
-    
-    /*
-     let persons = read()
-             for p in persons
-             {
-                 if p.id == id
-                 {
-                     return
-                 }
-             }
-             let insertStatementString = "INSERT INTO person (Id, name, age) VALUES (?, ?, ?);"
-             var insertStatement: OpaquePointer? = nil
-             if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
-                 sqlite3_bind_int(insertStatement, 1, Int32(id))
-                 sqlite3_bind_text(insertStatement, 2, (name as NSString).utf8String, -1, nil)
-                 sqlite3_bind_int(insertStatement, 3, Int32(age))
-                 
-                 if sqlite3_step(insertStatement) == SQLITE_DONE {
-                     print("Successfully inserted row.")
-                 } else {
-                     print("Could not insert row.")
-                 }
-             } else {
-                 print("INSERT statement could not be prepared.")
-             }
-             sqlite3_finalize(insertStatement)
-     */
 }
