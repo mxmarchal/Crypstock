@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Bitcoin",
+    "shortName": "BTC",
+    "colors": {
+      "primary": "#FDC830",
+      "secondary": "#F37335"
+    },
+    "values":[
+      123,
+      456,
+      789
+    ],
+    "currentValue": 24935.40
+  },
+  {
+    "name": "Etherum",
+    "shortName": "ETH",
+    "colors": {
+      "primary": "#8E2DE2",
+      "secondary": "#4A00E0"
+    },
+    "values":[
+      10,
+      20,
+      15
+    ],
+    "currentValue": 629.16
+  }
+]

@@ -8,25 +8,21 @@
 import SwiftUI
 
 struct CoinItemView: View {
-    let name: String;
-    let shortName: String;
-    let currentValue: Double;
-    let primaryColor: Color;
-    let secondaryColor: Color;
-    
+    let coin: Coin;
+
     var body: some  View {
-        let currentValueFormatted = String(format: "%.2f", currentValue)
+        let currentValueFormatted = String(format: "%.2f", coin.currentValue)
         let randomDataGraph = generateRandomDataArray()
         HStack {
             Group {
                 VStack(alignment: .leading) {
                     HStack {
-                        Text("\(name)")
+                        Text("\(coin.name)")
                             .font(.largeTitle)
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                         Spacer()
                         VStack(alignment: .trailing) {
-                            Text("1\(shortName) = \(currentValueFormatted)$").fontWeight(.semibold)
+                            Text("1\(coin.shortName) = \(currentValueFormatted)$").fontWeight(.semibold)
                             Text("12390 $USD").fontWeight(.bold).font(.title2)
                             //Check currencies swift google
                         }
@@ -36,21 +32,20 @@ struct CoinItemView: View {
             }.padding(20)
         }
         .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 300, maxWidth: .infinity, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 180, maxHeight: 350, alignment: .topLeading)
-        .background(LinearGradient(gradient: Gradient(colors: [primaryColor, secondaryColor]), startPoint: .top, endPoint: .bottom))
+        .background(LinearGradient(gradient: Gradient(colors: [Color(hex: coin.colors.primary), Color(hex: coin.colors.secondary)]), startPoint: .top, endPoint: .bottom))
         .foregroundColor(.white)
         .cornerRadius(20.0)
     }
     
     func generateRandomDataArray() -> [Double] {
         var data: [Double] = []
-        let minValue = currentValue - (currentValue * 0.2)
-        let maxValue = currentValue + (currentValue * 0.2)
+        let minValue = coin.currentValue - (coin.currentValue * 0.2)
+        let maxValue = coin.currentValue + (coin.currentValue * 0.2)
         
         for _ in 0..<50 {
             let value = Double.random(in: minValue ..< maxValue)
             data.append(value)
         }
-        print(data)
         return data
     }
     
@@ -80,9 +75,9 @@ struct CoinItemView: View {
         }
     }
 }
-
-struct CoinItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        CoinItemView(name: "Bitcoin", shortName: "BTC", currentValue: 234.32, primaryColor: .red, secondaryColor: .black)
-    }
-}
+//
+//struct CoinItemView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CoinItemView(name: "Bitcoin", shortName: "BTC", currentValue: 234.32, primaryColor: .red, secondaryColor: .black)
+//    }
+//}

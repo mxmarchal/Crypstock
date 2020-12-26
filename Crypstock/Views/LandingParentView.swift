@@ -26,11 +26,6 @@ struct LandingParentView: View {
                             Image(systemName: "phone.fill")
                             Text("Portfolio")
                           }
-                    PortfolioView(childView: $childView, user: $user)
-                         .tabItem {
-                            Image(systemName: "phone.fill")
-                            Text("Portfolio2")
-                          }
                 }
         }
     }

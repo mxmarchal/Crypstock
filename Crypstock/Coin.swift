@@ -7,11 +7,21 @@
 
 import SwiftUI
 
-struct Coin: Identifiable {
-    var id = UUID()
+struct CoinColors: Decodable {
+    var primary: String
+    var secondary: String
+}
+
+struct Coin: Decodable {
     var name: String
     var shortName: String
+    var colors: CoinColors
+    var values: [Double]
     var currentValue: Double
-    var primaryColor: String
-    var secondaryColor: String
+}
+
+extension Coin: Identifiable {
+    var id: UUID {
+        return UUID()
+    }
 }
