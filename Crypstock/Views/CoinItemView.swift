@@ -8,21 +8,24 @@
 import SwiftUI
 
 struct CoinItemView: View {
-    let coin: Coin;
+    let coin: Coin; // REVIEW #3 - no need for ;
 
     var body: some  View {
+        // REVIEW #3 - Extraxt this kind of logic to a View Model, views should be as dumb as possible and just set texts
         let currentValueFormatted = String(format: "%.2f", coin.currentValue)
         let randomDataGraph = generateRandomDataArray()
         HStack {
             Group {
                 VStack(alignment: .leading) {
                     HStack {
+                        // REVIEW #3 - You can just pass coin.name no need to use brackets
                         Text("\(coin.name)")
                             .font(.largeTitle)
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                         Spacer()
                         VStack(alignment: .trailing) {
                             Text("1\(coin.shortName) = \(currentValueFormatted)$").fontWeight(.semibold)
+                            // REVIEW #3 - Value is not dynamic
                             Text("12390 $USD").fontWeight(.bold).font(.title2)
                             //Check currencies swift google
                         }

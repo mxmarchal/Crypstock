@@ -32,6 +32,7 @@ struct PortfolioView: View {
                         }
                 }
                 .navigationBarTitle("Portfolio")
+                // REVIEW #3 - Not localized.
             }
         }
     }

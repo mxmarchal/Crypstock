@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+// REVIEW #3 - Might want to use color assets to allow the system to handle dark mode. This is an old way.
+
 extension Color {
     init(hex: String) {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)

@@ -13,6 +13,7 @@ struct LandingParentView: View {
 
     var body: some View {
         switch(childView) {
+        // REVIEW #3 - Could be an enum
             case "LANDING_VIEW":
                 LandingView(childView: $childView)
             case "SIGNIN_VIEW":
@@ -20,11 +21,14 @@ struct LandingParentView: View {
             case "SIGNUP_VIEW":
                 SignUpView(childView: $childView, user: $user)
             default:
+                // REVIEW #3 - May also want this one to be a value type.
                 TabView {
                     PortfolioView(childView: $childView, user: $user)
                          .tabItem {
                             Image(systemName: "phone.fill")
+                            // REVIEW #3 - Extract.
                             Text("Portfolio")
+                            // REVIEW #3 - Not localized.
                           }
                 }
         }

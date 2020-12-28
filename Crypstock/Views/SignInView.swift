@@ -16,6 +16,7 @@ struct SignInView: View {
     @State var password: String = ""
     
 
+    // REVIEW #3 - Maybe move this color elsewhere than the view
     let backgroundGradientColors: Gradient = Gradient(colors: [Color(red: 0.0, green: 0.7058823529, blue: 0.8588235294), Color(red: 0, green: 0.5137254902, blue: 0.6901960784)])
     
     var body: some View {
@@ -25,6 +26,7 @@ struct SignInView: View {
             Image("logo")
                 ZStack {
                     VStack {
+                        // REVIEW #3 - Text is not localized yet. This is expected for the project delivery soon.
                         Text("Sign In")
                             .fontWeight(.bold)
                             .multilineTextAlignment(.leading)
@@ -39,6 +41,7 @@ struct SignInView: View {
                         .background(Color.white)
                         .cornerRadius(10)
                         HStack {
+                            // REVIEW #3 - Mayve move the `Image(systemName: "person")` to its own class/struct.
                             Image(systemName: "person").foregroundColor(.secondary)
                             SecureField("Password", text: $password).foregroundColor(.black)
                         }
@@ -49,6 +52,7 @@ struct SignInView: View {
                             Spacer()
                             HStack {
                                 Button(action: {
+                                    // REVIEW #3 - Use a view model to do this kind of work to extract the business logic from the view?
                                     let requestStatus = user.getUser(inputEmail: username, inputPassword: password)
                                     if requestStatus {
                                         childView = "APP"

@@ -12,6 +12,7 @@ struct LandingScroll: View {
         TabView {
             ForEach(1..<3) { i in
                 VStack {
+                    // REVIEW #3 -  Extract logic see example down
                     Image("LandingSlide\(i)")
                 }.clipShape(RoundedRectangle(cornerRadius: 10.0, style:.continuous))
             }
@@ -23,7 +24,20 @@ struct LandingScroll: View {
     }
 }
 
+// Example:
+//struct Images {
+//
+//    func landingSlide(_ i: Int) -> Image {
+//        Image("LandingSlide\(i)")
+//    }
+//
+//    var logo: Image {
+//        Image("logo")
+//    }
+//}
+
 struct LandingButtons: View {
+    // REVIEW #3 - No need for ;
     @Binding var childView: String;
 
     struct ButtonStyle: ViewModifier {
@@ -43,6 +57,7 @@ struct LandingButtons: View {
             Button(action: {
                 childView = "SIGNIN_VIEW"
             }) {
+                // REVIEW #3 - Not localized.
                 Text("Sign In").modifier(ButtonTextStyle())
             }.modifier(ButtonStyle())
             Button(action: {
@@ -56,6 +71,8 @@ struct LandingButtons: View {
 
 struct LandingView: View {
     @Binding var childView: String;
+
+    // REVIEW #3 - Extract colors and remove ;
     let backgroundGradientColors: Gradient = Gradient(colors: [Color(red: 0.0, green: 0.7058823529, blue: 0.8588235294), Color(red: 0, green: 0.5137254902, blue: 0.6901960784)])
     var body: some View {
         ZStack {

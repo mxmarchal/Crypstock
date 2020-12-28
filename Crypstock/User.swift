@@ -76,3 +76,5 @@ class User: Identifiable {
         }
     }
 }
+
+// REVIEW #3 - Extract the logic for the database layer away from the the class User. It should be its own class and do this kind of work. The data class should be just about the data structure definition, nothing more.

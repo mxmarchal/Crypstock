@@ -7,6 +7,8 @@
 
 import Foundation
 
+// REVIEW #3 - Maybe name it CoinManager
+
 class Coins {
     func loadCoinsFromJSON() -> [Coin]? {
         guard let fileURL = Bundle.main.url(forResource: "currencies", withExtension: "json") else {
@@ -22,6 +24,7 @@ class Coins {
                 return coinsData
             }
         } catch {
+            // REVIEW #3 - Catch is useless since you are forcecasting (!)
             print("Error: \(error)")
             return nil
         }
