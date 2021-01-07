@@ -12,7 +12,6 @@ struct CoinItemView: View {
 
     var body: some  View {
         let currentValueFormatted = String(format: "%.2f", coin.currentValue)
-        let randomDataGraph = generateRandomDataArray()
         HStack {
             Group {
                 VStack(alignment: .leading) {
@@ -27,7 +26,7 @@ struct CoinItemView: View {
                             //Check currencies swift google
                         }
                     }
-                    CoinItemGraph(graphData: randomDataGraph)
+                    CoinItemGraph(graphData: coin.values)
                 }
             }.padding(20)
         }
@@ -35,18 +34,6 @@ struct CoinItemView: View {
         .background(LinearGradient(gradient: Gradient(colors: [Color(hex: coin.colors.primary), Color(hex: coin.colors.secondary)]), startPoint: .top, endPoint: .bottom))
         .foregroundColor(.white)
         .cornerRadius(20.0)
-    }
-    
-    func generateRandomDataArray() -> [Double] {
-        var data: [Double] = []
-        let minValue = coin.currentValue - (coin.currentValue * 0.2)
-        let maxValue = coin.currentValue + (coin.currentValue * 0.2)
-        
-        for _ in 0..<50 {
-            let value = Double.random(in: minValue ..< maxValue)
-            data.append(value)
-        }
-        return data
     }
     
     struct CoinItemGraph: View {

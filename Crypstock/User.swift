@@ -8,6 +8,11 @@
 import Foundation
 import SQLite
 
+struct UserModel {
+    var uId: Int64?;
+    var email: String?;
+}
+
 class User: Identifiable {
     //Database
     var db: Connection? = nil;
@@ -17,12 +22,15 @@ class User: Identifiable {
     let cPassword = Expression<String>("password")
     
     //Data
-    var email: String? = ""
+    var userData: UserModel? = nil;
+    
+    //PortfolioManager
+    var portfolioManager: Portfolio? = nil;
+    
     
     init() {
         initDatabase()
-        initTable()
-        print("done")
+        initTables()
     }
     
     func initDatabase() {
@@ -38,15 +46,20 @@ class User: Identifiable {
         }
     }
     
-    func initTable() {
+    func initTables() {
 
         do {
+            //Users table
             try db!.run(usersTable.create(ifNotExists: true) { t in
                 t.column(cId, primaryKey: .autoincrement)
                 t.column(cEmail, unique: true, check: cEmail.like("%@%"))
                 t.column(cPassword)
             })
             print("Table 'users' created")
+            print("Users done")
+            
+            //Init other tables
+            self.portfolioManager = Portfolio(db: db)
         } catch {
             print("An error occured while creating 'users' table")
         }
@@ -58,7 +71,9 @@ class User: Identifiable {
             if query == nil {
                 return false
             }
-            email = try query?.get(cEmail) //Set email to my data
+            let id = try query?.get(cId)
+            let email = try query?.get(cEmail)
+            userData = UserModel(uId: id ?? nil, email: email ?? nil)
             return true
         } catch {
             print("An error occured while selec user from 'users' table")
@@ -66,13 +81,30 @@ class User: Identifiable {
         }
     }
     
-    
     func createUser(inputEmail: String, inputPassword: String) {
         do {
             let rowId = try db!.run(usersTable.insert(cEmail <- inputEmail, cPassword <- inputPassword))
             print("User \(inputEmail) added. (RowID: \(rowId))")
         } catch {
             print("An error occured while inserting user into 'users' table")
+        }
+    }
+    
+    func getUserPortfolio() -> Array<Any>? {
+        do {
+            if (userData == nil) {
+                return nil;
+            }
+            let uId = userData?.uId
+            if (uId == nil) {
+                return nil;
+            } else {
+                let unwrappedUId = uId!
+                let res = portfolioManager?.getPortfolio(uId: unwrappedUId)
+                return res;
+            }
+        } catch {
+            return nil;
         }
     }
 }

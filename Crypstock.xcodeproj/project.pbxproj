@@ -14,9 +14,14 @@
 		5832334025870D09009185DF /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832333F25870D09009185DF /* UIColorExtension.swift */; };
 		58323353258735D9009185DF /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58323352258735D9009185DF /* Coin.swift */; };
 		5832335825873633009185DF /* CoinItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832335725873633009185DF /* CoinItemView.swift */; };
+		583ACDB325A7ABF100B1B4D1 /* ListCoinsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583ACDB225A7ABF100B1B4D1 /* ListCoinsView.swift */; };
+		583ACDB825A7AD8A00B1B4D1 /* Portfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583ACDB725A7AD8A00B1B4D1 /* Portfolio.swift */; };
+		583ACDBD25A7C4B100B1B4D1 /* CoinDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583ACDBC25A7C4B100B1B4D1 /* CoinDetailsView.swift */; };
+		583ACDC225A7CA2800B1B4D1 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583ACDC125A7CA2800B1B4D1 /* Transaction.swift */; };
 		589B0CA625950404002C8BA0 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 589B0CA525950404002C8BA0 /* SQLite */; };
 		589B0CAE259650E3002C8BA0 /* currencies.json in Resources */ = {isa = PBXBuildFile; fileRef = 589B0CAD259650E3002C8BA0 /* currencies.json */; };
 		589B0CB625972095002C8BA0 /* Coins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589B0CB525972095002C8BA0 /* Coins.swift */; };
+		589B0CBB25989379002C8BA0 /* CoinItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589B0CBA25989379002C8BA0 /* CoinItemViewModel.swift */; };
 		58B86C1F257D456A0072782B /* CrypstockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B86C1E257D456A0072782B /* CrypstockApp.swift */; };
 		58B86C23257D456D0072782B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58B86C22257D456D0072782B /* Assets.xcassets */; };
 		58B86C26257D456D0072782B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58B86C25257D456D0072782B /* Preview Assets.xcassets */; };
@@ -51,8 +56,13 @@
 		5832333F25870D09009185DF /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		58323352258735D9009185DF /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		5832335725873633009185DF /* CoinItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinItemView.swift; sourceTree = "<group>"; };
+		583ACDB225A7ABF100B1B4D1 /* ListCoinsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoinsView.swift; sourceTree = "<group>"; };
+		583ACDB725A7AD8A00B1B4D1 /* Portfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portfolio.swift; sourceTree = "<group>"; };
+		583ACDBC25A7C4B100B1B4D1 /* CoinDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailsView.swift; sourceTree = "<group>"; };
+		583ACDC125A7CA2800B1B4D1 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Transaction.swift; path = Views/Transaction.swift; sourceTree = "<group>"; };
 		589B0CAD259650E3002C8BA0 /* currencies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = currencies.json; path = Crypstock/currencies.json; sourceTree = SOURCE_ROOT; };
 		589B0CB525972095002C8BA0 /* Coins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coins.swift; sourceTree = "<group>"; };
+		589B0CBA25989379002C8BA0 /* CoinItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinItemViewModel.swift; sourceTree = "<group>"; };
 		58B86C1B257D456A0072782B /* Crypstock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypstock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58B86C1E257D456A0072782B /* CrypstockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrypstockApp.swift; sourceTree = "<group>"; };
 		58B86C22257D456D0072782B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,6 +113,8 @@
 				582316FC257D83F100601F95 /* LandingParentView.swift */,
 				5832333A258703D8009185DF /* PortfolioView.swift */,
 				5832335725873633009185DF /* CoinItemView.swift */,
+				583ACDB225A7ABF100B1B4D1 /* ListCoinsView.swift */,
+				583ACDBC25A7C4B100B1B4D1 /* CoinDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -138,6 +150,8 @@
 		58B86C1D257D456A0072782B /* Crypstock */ = {
 			isa = PBXGroup;
 			children = (
+				583ACDC125A7CA2800B1B4D1 /* Transaction.swift */,
+				583ACDB725A7AD8A00B1B4D1 /* Portfolio.swift */,
 				589B0CAD259650E3002C8BA0 /* currencies.json */,
 				5832334C25873593009185DF /* Extensions */,
 				58B86C1E257D456A0072782B /* CrypstockApp.swift */,
@@ -148,6 +162,7 @@
 				58323352258735D9009185DF /* Coin.swift */,
 				58EB45C12594FAA500D4556E /* User.swift */,
 				589B0CB525972095002C8BA0 /* Coins.swift */,
+				589B0CBA25989379002C8BA0 /* CoinItemViewModel.swift */,
 			);
 			path = Crypstock;
 			sourceTree = "<group>";
@@ -316,12 +331,17 @@
 			files = (
 				582316FD257D83F100601F95 /* LandingParentView.swift in Sources */,
 				5832334025870D09009185DF /* UIColorExtension.swift in Sources */,
+				583ACDC225A7CA2800B1B4D1 /* Transaction.swift in Sources */,
+				589B0CBB25989379002C8BA0 /* CoinItemViewModel.swift in Sources */,
 				589B0CB625972095002C8BA0 /* Coins.swift in Sources */,
 				5832333B258703D8009185DF /* PortfolioView.swift in Sources */,
+				583ACDB325A7ABF100B1B4D1 /* ListCoinsView.swift in Sources */,
 				58231702257D88B200601F95 /* SignUpView.swift in Sources */,
+				583ACDBD25A7C4B100B1B4D1 /* CoinDetailsView.swift in Sources */,
 				582316F8257D6DDA00601F95 /* LandingView.swift in Sources */,
 				58B86C50257D46A70072782B /* SignInView.swift in Sources */,
 				5832335825873633009185DF /* CoinItemView.swift in Sources */,
+				583ACDB825A7AD8A00B1B4D1 /* Portfolio.swift in Sources */,
 				58323353258735D9009185DF /* Coin.swift in Sources */,
 				58EB45C22594FAA500D4556E /* User.swift in Sources */,
 				58B86C1F257D456A0072782B /* CrypstockApp.swift in Sources */,

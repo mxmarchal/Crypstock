@@ -8,31 +8,21 @@
 import SwiftUI
 import Combine
 
-
 struct PortfolioView: View {
     @Binding var childView: String
     @Binding var user: User
-/*
-    let coinsData: [Coin] =
-        [Coin(name: "Bitcoin", shortName: "BTC", currentValue: 15721.79, primaryColor: "#FDC830", secondaryColor: "#F37335"),
-         Coin(name: "Ethereum", shortName: "ETH", currentValue: 584.67, primaryColor: "#8E2DE2", secondaryColor: "#4A00E0")
-        ]
-    */
-    let coinsJSON: [Coin]? = Coins().loadCoinsFromJSON()
+    
+    var portfolioItems:Array<Any>? = nil;
 
+    func getPortfolioItems() -> Text {
+        user.getUserPortfolio()
+        return Text("Hey")
+    }
+    
     var body: some View {
         NavigationView {
-            if let coinsData = coinsJSON {
-                List(coinsData) {
-                    coin in
-                        ZStack {
-                            NavigationLink(destination: Text("\(coin.name)")) {
-                            }.opacity(0.0)
-                            CoinItemView(coin: coin)
-                        }
-                }
-                .navigationBarTitle("Portfolio")
-            }
+            Text("You don't have any coins.")
+            getPortfolioItems()
         }
     }
 }

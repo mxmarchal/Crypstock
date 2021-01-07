@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct CoinColors: Decodable {
-    var primary: String
-    var secondary: String
+    let primary: String
+    let secondary: String
 }
 
 struct Coin: Decodable {
-    var name: String
-    var shortName: String
-    var colors: CoinColors
-    var values: [Double]
-    var currentValue: Double
+    let name: String
+    let shortName: String
+    let colors: CoinColors
+    let values: [Double]
+    let currentValue: Double
 }
 
 extension Coin: Identifiable {

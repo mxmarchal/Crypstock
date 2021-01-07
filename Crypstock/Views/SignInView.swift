@@ -12,8 +12,8 @@ struct SignInView: View {
     @Binding var user: User
     
     //form
-    @State var username: String = ""
-    @State var password: String = ""
+    @State var username: String = "max@max"
+    @State var password: String = "max"
     
 
     let backgroundGradientColors: Gradient = Gradient(colors: [Color(red: 0.0, green: 0.7058823529, blue: 0.8588235294), Color(red: 0, green: 0.5137254902, blue: 0.6901960784)])
