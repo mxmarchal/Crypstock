@@ -19,6 +19,7 @@
 		583ACDBD25A7C4B100B1B4D1 /* CoinDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583ACDBC25A7C4B100B1B4D1 /* CoinDetailsView.swift */; };
 		583ACDC225A7CA2800B1B4D1 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583ACDC125A7CA2800B1B4D1 /* Transaction.swift */; };
 		583ACDF625A8815900B1B4D1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 583ACDF825A8815900B1B4D1 /* Localizable.strings */; };
+		583ACE0825A8AD8B00B1B4D1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 583ACE0725A8AD8B00B1B4D1 /* README.md */; };
 		589B0CA625950404002C8BA0 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 589B0CA525950404002C8BA0 /* SQLite */; };
 		589B0CAE259650E3002C8BA0 /* currencies.json in Resources */ = {isa = PBXBuildFile; fileRef = 589B0CAD259650E3002C8BA0 /* currencies.json */; };
 		589B0CB625972095002C8BA0 /* Coins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589B0CB525972095002C8BA0 /* Coins.swift */; };
@@ -63,6 +64,7 @@
 		583ACDF725A8815900B1B4D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		583ACDFC25A8816900B1B4D1 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		583ACE0025A88DF300B1B4D1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		583ACE0725A8AD8B00B1B4D1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		589B0CAD259650E3002C8BA0 /* currencies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = currencies.json; path = Crypstock/currencies.json; sourceTree = SOURCE_ROOT; };
 		589B0CB525972095002C8BA0 /* Coins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coins.swift; sourceTree = "<group>"; };
 		58B86C1B257D456A0072782B /* Crypstock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypstock.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +134,7 @@
 		58B86C12257D45690072782B = {
 			isa = PBXGroup;
 			children = (
+				583ACE0725A8AD8B00B1B4D1 /* README.md */,
 				58B86C1D257D456A0072782B /* Crypstock */,
 				58B86C2F257D456D0072782B /* CrypstockTests */,
 				58B86C3A257D456D0072782B /* CrypstockUITests */,
@@ -308,6 +311,7 @@
 			files = (
 				58B86C26257D456D0072782B /* Preview Assets.xcassets in Resources */,
 				583ACDF625A8815900B1B4D1 /* Localizable.strings in Resources */,
+				583ACE0825A8AD8B00B1B4D1 /* README.md in Resources */,
 				58B86C23257D456D0072782B /* Assets.xcassets in Resources */,
 				589B0CAE259650E3002C8BA0 /* currencies.json in Resources */,
 			);
