@@ -21,8 +21,8 @@ class PortfolioTests: XCTestCase {
     func testBuyBTC() throws {
         let user: User = User()
         let coin: Coin = Coin(name: "Bitcoin", shortName: "BTC", colors: CoinColors(primary: "#ffffff", secondary: "#000000"), values: [230.0, 217.23], currentValue: 240, quantity: nil)
-        
-        _ = try user.getUser(inputEmail: "maxm@max", inputPassword: "max")
+        _ = try user.createUser(inputEmail: "maxbuy@max", inputPassword: "max")
+        _ = try user.getUser(inputEmail: "maxbuy@max", inputPassword: "max")
         let buy = user.updateUserPotfolio(coin: coin, value: 23.0, isSell: false)
         XCTAssert(buy == true, "BTC bougth.")
     }
@@ -31,7 +31,7 @@ class PortfolioTests: XCTestCase {
         let user: User = User()
         let coin: Coin = Coin(name: "Bitcoin", shortName: "BTC", colors: CoinColors(primary: "#ffffff", secondary: "#000000"), values: [230.0, 217.23], currentValue: 240, quantity: nil)
         
-        _ = try user.getUser(inputEmail: "maxm@max", inputPassword: "max")
+        _ = try user.getUser(inputEmail: "maxbuy@max", inputPassword: "max")
         let sell = user.updateUserPotfolio(coin: coin, value: 23.0, isSell: true)
         XCTAssert(sell == true, "BTC sold.")
     }
@@ -41,7 +41,7 @@ class PortfolioTests: XCTestCase {
         let user: User = User()
         let coin: Coin = Coin(name: "Bitcoin", shortName: "BTC", colors: CoinColors(primary: "#ffffff", secondary: "#000000"), values: [230.0, 217.23], currentValue: 240, quantity: nil)
         
-        _ = try user.getUser(inputEmail: "maxm@max", inputPassword: "max")
+        _ = try user.getUser(inputEmail: "maxbuy@max", inputPassword: "max")
         let buy = user.updateUserPotfolio(coin: coin, value: 50.0, isSell: true)
         XCTAssert(buy == false, "BTC not sold (not enough).")
     }

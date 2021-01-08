@@ -39,7 +39,7 @@ class CrypstockTests: XCTestCase {
         XCTAssert(createUser == true, "User is created.")
     }
     
-    func testUserCreateUserWronEmail() throws {
+    func testUserCreateUserWrongEmail() throws {
         let user = User()
 
         let createUser = try user.createUser(inputEmail: "maxmax", inputPassword: "max")

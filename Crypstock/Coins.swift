@@ -18,7 +18,7 @@ class Coins {
                 guard let jsonData = fileContents.data(using: .utf8) else {
                     return nil
                 }
-                let coinsData: [Coin] = try! JSONDecoder().decode([Coin].self, from: jsonData)
+                let coinsData: [Coin] = try JSONDecoder().decode([Coin].self, from: jsonData)
                 return coinsData
             }
         } catch {

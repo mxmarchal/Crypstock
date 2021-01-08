@@ -12,8 +12,8 @@ struct SignInView: View {
     @Binding var user: User
     
     //form
-    @State var username: String = "max@max"
-    @State var password: String = "max"
+    @State var username: String = ""
+    @State var password: String = ""
     
     //Alert
     @State private var showingAlert = false
