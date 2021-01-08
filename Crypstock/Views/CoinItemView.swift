@@ -43,8 +43,8 @@ struct CoinItemView: View {
     
     struct CoinItemGraph: View {
         let graphData: [Double]
-        let maxWidth: Double = 300.0;
-        let maxHeight: Double = 200.0;
+        let maxWidth: Double = 300.0
+        let maxHeight: Double = 200.0
 
         func generateGraph() -> Path {
             var graph = Path()
@@ -57,7 +57,7 @@ struct CoinItemView: View {
                 let p2 = CGPoint(x: stepWidth * Double(dataIndex), y: ((graphData[dataIndex] - min) / diff) * maxHeight)
                 graph.addLine(to: p2)
             }
-            return graph;
+            return graph
         }
         
         var body: some View {

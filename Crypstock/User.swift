@@ -9,31 +9,39 @@ import Foundation
 import SQLite
 
 struct UserModel {
-    var uId: Int64?;
-    var email: String?;
+    var uId: Int64?
+    var email: String?
 }
 
 class User: Identifiable {
     //Database
-    var db: Connection? = nil;
+    var db: Connection? = nil
     let usersTable = Table("users")
     let cId = Expression<Int64>("id")
     let cEmail = Expression<String>("email")
     let cPassword = Expression<String>("password")
     
+    enum DatabaseError: Error {
+        case NoConnection
+    }
+    
     //Data
-    var userData: UserModel? = nil;
+    var userData: UserModel? = nil
     
     //PortfolioManager
-    var portfolioManager: Portfolio? = nil;
+    var portfolioManager: Portfolio? = nil
     
     
     init() {
-        initDatabase()
-        initTables()
+        do {
+            try initDatabase()
+            try initTables()
+        } catch {
+            print("ERROR USER:")
+        }
     }
     
-    func initDatabase() {
+    func initDatabase() throws {
         do {
             let path = NSSearchPathForDirectoriesInDomains(
                 .documentDirectory, .userDomainMask, true
@@ -47,11 +55,14 @@ class User: Identifiable {
         }
     }
     
-    func initTables() {
+    func initTables() throws {
 
         do {
             //Users table
-            try db!.run(usersTable.create(ifNotExists: true) { t in
+            guard let db = db else {
+                throw DatabaseError.NoConnection
+            }
+            try db.run(usersTable.create(ifNotExists: true) { t in
                 t.column(cId, primaryKey: .autoincrement)
                 t.column(cEmail, unique: true, check: cEmail.like("%@%"))
                 t.column(cPassword)
@@ -66,9 +77,12 @@ class User: Identifiable {
         }
     }
     
-    func getUser(inputEmail: String, inputPassword: String) -> Bool {
+    func getUser(inputEmail: String, inputPassword: String) throws -> Bool {
         do {
-            let query = try db!.pluck(usersTable.filter(cEmail == inputEmail).filter(cPassword == inputPassword))
+            guard let db = db else {
+                throw DatabaseError.NoConnection
+            }
+            let query = try db.pluck(usersTable.filter(cEmail == inputEmail).filter(cPassword == inputPassword))
             if query == nil {
                 return false
             }
@@ -82,51 +96,50 @@ class User: Identifiable {
         }
     }
     
-    func createUser(inputEmail: String, inputPassword: String) -> Bool {
+    func createUser(inputEmail: String, inputPassword: String) throws -> Bool {
         do {
-            let rowId = try db!.run(usersTable.insert(cEmail <- inputEmail, cPassword <- inputPassword))
-            print("User \(inputEmail) added. (RowID: \(rowId))");
-            return true;
+            guard let db = db else {
+                throw DatabaseError.NoConnection
+            }
+            let rowId = try db.run(usersTable.insert(cEmail <- inputEmail, cPassword <- inputPassword))
+            print("User \(inputEmail) added. (RowID: \(rowId))")
+            return true
         } catch {
             print("An error occured while inserting user into 'users' table")
-            return false;
+            return false
         }
     }
     
     func getUserPortfolio() -> Array<Coin>? {
-        do {
-            if (userData == nil) {
-                return nil;
-            }
-            let uId = userData?.uId
-            if (uId == nil) {
+        if (userData == nil) {
+            return nil
+        }
+        let uId = userData?.uId
+        if (uId == nil) {
+            return nil
+        } else {
+            let unwrappedUId = uId!
+            let res = portfolioManager!.getPortfolio(uId: unwrappedUId)
+            if (res.count == 0) {
                 return nil
             } else {
-                let unwrappedUId = uId!
-                let res = portfolioManager!.getPortfolio(uId: unwrappedUId)
-                if (res.count == 0) {
-                    return nil;
-                } else {
-                    var finalCoin: [Coin] = []
-                    let coinsJSON: [Coin]? = Coins().loadCoinsFromJSON()
-                    if let coins = coinsJSON {
-                        for coin in coins {
-                            for portfolioCoin in res {
-                                if coin.shortName == portfolioCoin.coinName {
-                                    var appendCoin = coin
-                                    appendCoin.quantity = Double(portfolioCoin.coinQuantity)
-                                    finalCoin.append(appendCoin)
-                                }
+                var finalCoin: [Coin] = []
+                let coinsJSON: [Coin]? = Coins().loadCoinsFromJSON()
+                if let coins = coinsJSON {
+                    for coin in coins {
+                        for portfolioCoin in res {
+                            if coin.shortName == portfolioCoin.coinName {
+                                var appendCoin = coin
+                                appendCoin.quantity = Double(portfolioCoin.coinQuantity)
+                                finalCoin.append(appendCoin)
                             }
                         }
-                        return finalCoin
-                    } else {
-                        return nil
                     }
+                    return finalCoin
+                } else {
+                    return nil
                 }
             }
-        } catch {
-            return nil;
         }
     }
     

@@ -9,6 +9,6 @@ import Foundation
 
 struct CoinTransaction: Identifiable {
     let id = UUID()
-    let value: Double;
-    let timestamp: TimeInterval;
+    let value: Double
+    let timestamp: TimeInterval
 }

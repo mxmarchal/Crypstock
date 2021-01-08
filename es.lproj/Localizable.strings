@@ -17,6 +17,7 @@
 "signInPageTitle" = "Ingresa";
 "signInPageEmail" = "E-mail";
 "signInPagePassword" = "Contraseña";
+"signInButtonBack" = "Volver";
 "signInPageButton" = "Continúa ";
 "signInPageAlertTitle" = "Error";
 "signInPageAlertMessage" = "Esta cuenta no existe.";
@@ -26,6 +27,7 @@
 "signUpPageTitle" = "Regístrate";
 "signUpPageEmail" = "E-mail";
 "signUpPagePassword" = "Contraseña";
+"signUpButtonBack" = "Volver";
 "signUpPageButton" = "Continúa ";
 "signUpPageAlertTitle" = "Error";
 "signUpPageAlertMessage" = "Por favor, verifique sus datos introducidos / no tiene ya una cuenta.";

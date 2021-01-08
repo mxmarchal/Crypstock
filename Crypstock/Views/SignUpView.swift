@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SignUpView: View {
-    @Binding var childView: String;
+    @Binding var childView: String
     @Binding var user: User
     
     //form
@@ -47,14 +47,28 @@ struct SignUpView: View {
                         .background(Color.white)
                         .cornerRadius(10)
                         HStack {
+                            HStack {
+                                Button(action: {
+                                    childView = "LANDING_VIEW"
+                                }, label: {
+                                    Text("signUpButtonBack")
+                                })
+                            }
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(10)
                             Spacer()
                             HStack {
                                 Button(action: {
-                                    let confirmUser: Bool = user.createUser(inputEmail: username, inputPassword: password)
+                                    do {
+                                    let confirmUser: Bool = try user.createUser(inputEmail: username, inputPassword: password)
                                     if (confirmUser) {
                                         childView = "SIGNIN_VIEW"
                                     } else {
                                         self.showingAlert = true
+                                    }
+                                    } catch {
+                                            self.showingAlert = true
                                     }
                                     //Show alert that say no
                                 }, label: {

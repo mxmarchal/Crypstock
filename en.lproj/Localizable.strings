@@ -17,6 +17,7 @@
 "signInPageTitle" = "Sign In";
 "signInPageEmail" = "E-mail";
 "signInPagePassword" = "Password";
+"signUpButtonBack" = "Back";
 "signInPageButton" = "Continue ";
 "signInPageAlertTitle" = "Error";
 "signInPageAlertMessage" = "This account doesn't exist.";
@@ -26,6 +27,7 @@
 "signUpPageTitle" = "Sign Up";
 "signUpPageEmail" = "E-mail";
 "signUpPagePassword" = "Password";
+"signUpButtonBack" = "Back";
 "signUpPageButton" = "Continue ";
 "signUpPageAlertTitle" = "Error";
 "signUpPageAlertMessage" = "Please, verify your informations entered / you don't have already an account.";

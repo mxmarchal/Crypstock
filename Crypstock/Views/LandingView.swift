@@ -24,7 +24,7 @@ struct LandingScroll: View {
 }
 
 struct LandingButtons: View {
-    @Binding var childView: String;
+    @Binding var childView: String
 
     struct ButtonStyle: ViewModifier {
         func body(content: Content) -> some View {
@@ -55,7 +55,7 @@ struct LandingButtons: View {
 }
 
 struct LandingView: View {
-    @Binding var childView: String;
+    @Binding var childView: String
     let backgroundGradientColors: Gradient = Gradient(colors: [Color(red: 0.0, green: 0.7058823529, blue: 0.8588235294), Color(red: 0, green: 0.5137254902, blue: 0.6901960784)])
     var body: some View {
         ZStack {

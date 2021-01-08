@@ -49,13 +49,27 @@ struct SignInView: View {
                         .background(Color.white)
                         .cornerRadius(10)
                         HStack {
+                            HStack {
+                                Button(action: {
+                                    childView = "LANDING_VIEW"
+                                }, label: {
+                                    Text("signInButtonBack")
+                                })
+                            }
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(10)
                             Spacer()
                             HStack {
                                 Button(action: {
-                                    let requestStatus = user.getUser(inputEmail: username, inputPassword: password)
+                                    do {
+                                    let requestStatus = try user.getUser(inputEmail: username, inputPassword: password)
                                     if requestStatus {
                                         childView = "APP"
                                     } else {
+                                        self.showingAlert = true
+                                    }
+                                    } catch {
                                         self.showingAlert = true
                                     }
                                 }, label: {

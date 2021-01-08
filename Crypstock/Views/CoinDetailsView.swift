@@ -19,8 +19,8 @@ struct CoinDetailsView: View {
     
     //Alert
     @State private var activeAlert: ActiveAlert = .error
-    @State private var showingAlert: Bool = false;
-    @State private var showingAlertValue0: Bool = false;
+    @State private var showingAlert: Bool = false
+    @State private var showingAlertValue0: Bool = false
     
     
     

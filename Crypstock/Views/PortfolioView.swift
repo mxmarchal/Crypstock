@@ -13,7 +13,7 @@ struct PortfolioView: View {
     @Binding var user: User
     @Binding var needRefresh: Bool
     
-    var portfolioItems:Array<Any>? = nil;
+    var portfolioItems:Array<Any>? = nil
 
     func getPortfolioItems() -> Array<Coin>? {
         let coinsFinal: Array<Coin>? = user.getUserPortfolio()

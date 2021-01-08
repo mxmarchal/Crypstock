@@ -22,7 +22,6 @@
 		589B0CA625950404002C8BA0 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 589B0CA525950404002C8BA0 /* SQLite */; };
 		589B0CAE259650E3002C8BA0 /* currencies.json in Resources */ = {isa = PBXBuildFile; fileRef = 589B0CAD259650E3002C8BA0 /* currencies.json */; };
 		589B0CB625972095002C8BA0 /* Coins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589B0CB525972095002C8BA0 /* Coins.swift */; };
-		589B0CBB25989379002C8BA0 /* CoinItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589B0CBA25989379002C8BA0 /* CoinItemViewModel.swift */; };
 		58B86C1F257D456A0072782B /* CrypstockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B86C1E257D456A0072782B /* CrypstockApp.swift */; };
 		58B86C23257D456D0072782B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58B86C22257D456D0072782B /* Assets.xcassets */; };
 		58B86C26257D456D0072782B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58B86C25257D456D0072782B /* Preview Assets.xcassets */; };
@@ -66,7 +65,6 @@
 		583ACE0025A88DF300B1B4D1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		589B0CAD259650E3002C8BA0 /* currencies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = currencies.json; path = Crypstock/currencies.json; sourceTree = SOURCE_ROOT; };
 		589B0CB525972095002C8BA0 /* Coins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coins.swift; sourceTree = "<group>"; };
-		589B0CBA25989379002C8BA0 /* CoinItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinItemViewModel.swift; sourceTree = "<group>"; };
 		58B86C1B257D456A0072782B /* Crypstock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypstock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58B86C1E257D456A0072782B /* CrypstockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrypstockApp.swift; sourceTree = "<group>"; };
 		58B86C22257D456D0072782B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -167,7 +165,6 @@
 				58323352258735D9009185DF /* Coin.swift */,
 				58EB45C12594FAA500D4556E /* User.swift */,
 				589B0CB525972095002C8BA0 /* Coins.swift */,
-				589B0CBA25989379002C8BA0 /* CoinItemViewModel.swift */,
 			);
 			path = Crypstock;
 			sourceTree = "<group>";
@@ -340,7 +337,6 @@
 				582316FD257D83F100601F95 /* LandingParentView.swift in Sources */,
 				5832334025870D09009185DF /* UIColorExtension.swift in Sources */,
 				583ACDC225A7CA2800B1B4D1 /* Transaction.swift in Sources */,
-				589B0CBB25989379002C8BA0 /* CoinItemViewModel.swift in Sources */,
 				589B0CB625972095002C8BA0 /* Coins.swift in Sources */,
 				5832333B258703D8009185DF /* PortfolioView.swift in Sources */,
 				583ACDB325A7ABF100B1B4D1 /* ListCoinsView.swift in Sources */,

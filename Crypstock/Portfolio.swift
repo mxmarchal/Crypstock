@@ -9,12 +9,12 @@ import Foundation
 import SQLite
 
 struct PortfolioModel {
-    var coinName: String;
-    var coinQuantity: Double;
+    var coinName: String
+    var coinQuantity: Double
 }
 
 class Portfolio {
-    var db: Connection? = nil;
+    var db: Connection? = nil
     let portfolioTable = Table("portfolio")
     let cId = Expression<Int64>("id") //id
     let cUId = Expression<Int64>("uid") //user id
@@ -47,7 +47,7 @@ class Portfolio {
     }
     
     func getPortfolio(uId: Int64) -> Array<PortfolioModel> {
-        var portfolioData: Array<PortfolioModel> = [];
+        var portfolioData: Array<PortfolioModel> = []
         do {
             let query = Array(try db!.prepare(portfolioTable.filter(cUId == uId)))
             for row in query {
@@ -68,7 +68,7 @@ class Portfolio {
             let query = try db!.pluck(portfolioTable.filter(cUId == uId).filter(cCoinName == coinName))
             if query == nil {
                 if (value < 1) {
-                    return false;
+                    return false
                 }
                 try db!.run(portfolioTable.insert(cUId <- uId, cCoinName <- coinName, cCoinQuantity <- value))
                 return true

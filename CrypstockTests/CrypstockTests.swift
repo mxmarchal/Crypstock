@@ -10,17 +10,47 @@ import XCTest
 
 class CrypstockTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        //try removeDatabase()
     }
+    
+    func removeDatabase() throws {
+        let path = NSSearchPathForDirectoriesInDomains(
+            .documentDirectory, .userDomainMask, true
+        ).first!
+        do {
+            try FileManager.default.removeItem(at: URL(fileURLWithPath: path))
+        } catch {
+            XCTFail("!ERROR! Unable to remove database file.")
+        }
+    }
+    
+    func testUserDBConnection() throws {
+        let user = User()
+        
+        XCTAssert(user.db != nil, "Database Connection isn't nil.")
+    }
+    
+    func testUserCreateUser() throws {
+        let user = User()
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let createUser = try user.createUser(inputEmail: "maxm@max", inputPassword: "max")
+        XCTAssert(createUser == true, "User is created.")
+    }
+    
+    func testUserCreateUserWronEmail() throws {
+        let user = User()
+
+        let createUser = try user.createUser(inputEmail: "maxmax", inputPassword: "max")
+        XCTAssert(createUser == false, "User isn't created (e-mail wrong).")
+    }
+    
+    func testUserSignIn() throws {
+        let user = User()
+
+        let createUser = try user.getUser(inputEmail: "maxm@max", inputPassword: "max")
+        XCTAssert(createUser == true, "User is signIn.")
     }
 
     func testPerformanceExample() throws {
