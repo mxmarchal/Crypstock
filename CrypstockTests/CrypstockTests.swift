@@ -34,7 +34,8 @@ class CrypstockTests: XCTestCase {
     
     func testUserCreateUser() throws {
         let user = User()
-
+        
+        _ = try user.deleteUser(inputEmail: "maxm@max")
         let createUser = try user.createUser(inputEmail: "maxm@max", inputPassword: "max")
         XCTAssert(createUser == true, "User is created.")
     }
@@ -48,7 +49,9 @@ class CrypstockTests: XCTestCase {
     
     func testUserSignIn() throws {
         let user = User()
-
+        
+        _ = try user.deleteUser(inputEmail: "maxm@max")
+        _ = try user.createUser(inputEmail: "maxm@max", inputPassword: "max")
         let signInUser = try user.getUser(inputEmail: "maxm@max", inputPassword: "max")
         XCTAssert(signInUser == true, "User is signIn.")
     }

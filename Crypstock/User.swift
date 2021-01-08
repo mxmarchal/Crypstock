@@ -110,6 +110,20 @@ class User: Identifiable {
         }
     }
     
+    func deleteUser(inputEmail: String) throws -> Bool {
+        do {
+            guard let db = db else {
+                throw DatabaseError.NoConnection
+            }
+            _ = try db.run(usersTable.filter(cEmail == inputEmail).delete())
+            print("User deleted.")
+            return true
+        } catch {
+            print("An error occured while inserting user into 'users' table")
+            return false
+        }
+    }
+    
     func getUserPortfolio() -> Array<Coin>? {
         if (userData == nil) {
             return nil
