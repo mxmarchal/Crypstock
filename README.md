@@ -33,9 +33,10 @@ You have all the files to fully run the project with Xcode.
 
 Because there is no "real" back-end, all the users, cryptos and portfolio features are stored in SQLite database in documents folder of your device. (App's Documents)
 
-For now, you only have two cryptocurrencies availables :
-* Bitcoin
-* Ethereum 
+For now, you  have three cryptocurrencies availables :
+* Bitcoin (BTC)
+* Ethereum (ETH)
+* Ripple (XRP)
 
 ## Bugs
 This is a list of problems/bugs that you migth encouter using the app:
