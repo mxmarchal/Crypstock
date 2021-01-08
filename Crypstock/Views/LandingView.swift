@@ -25,7 +25,7 @@ struct LandingScroll: View {
 
 struct LandingButtons: View {
     @Binding var childView: String
-
+    
     struct ButtonStyle: ViewModifier {
         func body(content: Content) -> some View {
             content.foregroundColor(.blue).background(Color(.white)).cornerRadius(50)

@@ -26,7 +26,7 @@ struct CoinDetailsView: View {
     
     struct CoinDetailsInput: View {
         @Binding var inputValue: Int
-
+        
         var body: some View {
             HStack {
                 Button(action: {
@@ -53,7 +53,7 @@ struct CoinDetailsView: View {
         @Binding var inputValue: Int
         @Binding var needRefresh: Bool
         @Binding var coin: Coin
-
+        
         let buttonText: Text
         let colorHexa: String
         let isSell: Bool
@@ -107,7 +107,7 @@ struct CoinDetailsView: View {
     }
     
     struct CoinDetailsTransactions: View {
-        let transactions: [CoinTransaction]? = [CoinTransaction(value: 1200, timestamp: 1000000)]
+        let transactions: [CoinTransaction]? = []
         
         func getDateTransaction(timestamp: TimeInterval) -> String {
             let date = Date(timeIntervalSince1970: timestamp)
@@ -119,7 +119,7 @@ struct CoinDetailsView: View {
         
         var body: some View {
             VStack {
-            Text("coinDetailsTransactionTitle").font(.largeTitle).fontWeight(.bold)
+                Text("coinDetailsTransactionTitle").font(.largeTitle).fontWeight(.bold)
             }.frame(minWidth: 0, maxWidth: .infinity, alignment: .topLeading)
             if transactions?.count == 0 {
                 Text("coinDetailsNoTransaction")
@@ -143,7 +143,7 @@ struct CoinDetailsView: View {
             }
         }
     }
-
+    
     var body: some View {
         VStack() {
             CoinItemView(coin: coin).frame(minWidth: 0, maxWidth: .infinity, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxHeight: 300, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -160,7 +160,7 @@ struct CoinDetailsView: View {
 }
 
 struct CoinDetailsView_Previews_Container: View {
-
+    
     @State private var user:User = User()
     @State var needRefresh:Bool = false
     

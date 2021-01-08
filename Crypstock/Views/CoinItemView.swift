@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CoinItemView: View {
     let coin: Coin
-
+    
     var body: some  View {
         let currentValueFormatted = String(format: "%.2f", coin.currentValue)
         HStack {
@@ -45,7 +45,7 @@ struct CoinItemView: View {
         let graphData: [Double]
         let maxWidth: Double = 300.0
         let maxHeight: Double = 145.0
-
+        
         func generateGraph() -> Path {
             var graph = Path()
             let stepWidth: Double = maxWidth / Double(graphData.count)

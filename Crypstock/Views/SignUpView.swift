@@ -17,13 +17,13 @@ struct SignUpView: View {
     
     //Alert
     @State private var showingAlert = false
-
+    
     let backgroundGradientColors: Gradient = Gradient(colors: [Color(red: 0.0, green: 0.7058823529, blue: 0.8588235294), Color(red: 0, green: 0.5137254902, blue: 0.6901960784)])
     var body: some View {
         ZStack {
             LinearGradient(gradient: backgroundGradientColors, startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
             VStack {
-            Image("logo")
+                Image("logo")
                 ZStack {
                     VStack {
                         Text("signUpPageTitle")
@@ -61,14 +61,14 @@ struct SignUpView: View {
                             HStack {
                                 Button(action: {
                                     do {
-                                    let confirmUser: Bool = try user.createUser(inputEmail: username, inputPassword: password)
-                                    if (confirmUser) {
-                                        childView = "SIGNIN_VIEW"
-                                    } else {
-                                        self.showingAlert = true
-                                    }
-                                    } catch {
+                                        let confirmUser: Bool = try user.createUser(inputEmail: username, inputPassword: password)
+                                        if (confirmUser) {
+                                            childView = "SIGNIN_VIEW"
+                                        } else {
                                             self.showingAlert = true
+                                        }
+                                    } catch {
+                                        self.showingAlert = true
                                     }
                                     //Show alert that say no
                                 }, label: {
@@ -92,10 +92,10 @@ struct SignUpView: View {
 }
 
 /*
-    IMPORTANT:
-    This container exist because of binding User class for SignUpView.
-    With this container, I can still do the preview without any problem.
-*/
+ IMPORTANT:
+ This container exist because of binding User class for SignUpView.
+ With this container, I can still do the preview without any problem.
+ */
 
 struct SignUpView_Previews_Container: View {
     @State private var user:User = User()

@@ -56,7 +56,7 @@ class User: Identifiable {
     }
     
     func initTables() throws {
-
+        
         do {
             //Users table
             guard let db = db else {

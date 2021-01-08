@@ -13,17 +13,17 @@ struct ListCoinsView: View {
     @Binding var needRefresh: Bool
     
     let coinsJSON: [Coin]? = Coins().loadCoinsFromJSON()
-
+    
     var body: some View {
         NavigationView {
             if let coinsData = coinsJSON {
                 List(coinsData) {
                     coin in
-                        ZStack {
-                            NavigationLink(destination: CoinDetailsView(user: $user, needRefresh: $needRefresh, coin: coin)) {
-                            }.opacity(0.0)
-                            CoinItemView(coin: coin)
-                        }
+                    ZStack {
+                        NavigationLink(destination: CoinDetailsView(user: $user, needRefresh: $needRefresh, coin: coin)) {
+                        }.opacity(0.0)
+                        CoinItemView(coin: coin)
+                    }
                 }
                 .navigationBarTitle("coinsAvailableListTitle")
             }
