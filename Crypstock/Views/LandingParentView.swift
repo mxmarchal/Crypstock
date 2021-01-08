@@ -10,6 +10,7 @@ import SwiftUI
 struct LandingParentView: View {
     @State private var childView = "LANDING_VIEW"
     @State private var user:User = User()
+    @State var needRefresh: Bool = false
 
     var body: some View {
         switch(childView) {
@@ -21,12 +22,11 @@ struct LandingParentView: View {
                 SignUpView(childView: $childView, user: $user)
             default:
                 TabView {
-                    PortfolioView(childView: $childView, user: $user)
-                         .tabItem {
+                    PortfolioView(childView: $childView, user: $user, needRefresh: $needRefresh).tabItem {
                             Image(systemName: "phone.fill")
                             Text("Portfolio")
-                          }
-                    ListCoinsView(childView: $childView, user: $user).tabItem {
+                         }
+                    ListCoinsView(childView: $childView, user: $user, needRefresh: $needRefresh).tabItem {
                         Image(systemName: "phone.fill")
                         Text("Coins Available")
                     }

@@ -11,6 +11,7 @@ import Combine
 struct PortfolioView: View {
     @Binding var childView: String
     @Binding var user: User
+    @Binding var needRefresh: Bool
     
     var portfolioItems:Array<Any>? = nil;
 
@@ -27,7 +28,7 @@ struct PortfolioView: View {
                 } else {
                     List(coinsData) {
                         coin in ZStack {
-                            NavigationLink(destination: CoinDetailsView(user: $user, coin: coin)) {
+                            NavigationLink(destination: CoinDetailsView(user: $user, needRefresh: $needRefresh, coin: coin)) {
                             }.opacity(0.0)
                             CoinItemView(coin: coin)
                         }
@@ -36,7 +37,7 @@ struct PortfolioView: View {
             } else {
                 Text("You don't have any coins.")
             }
-        }
+        }.accentColor(self.needRefresh ? .white : .black)
     }
 }
 
@@ -50,6 +51,6 @@ struct PortfolioView_Previews_Container: View {
     @State private var user:User = User()
     
     var body: some View {
-        PortfolioView(childView: .constant(""), user: $user)
+        PortfolioView(childView: .constant(""), user: $user, needRefresh: .constant(false))
     }
 }

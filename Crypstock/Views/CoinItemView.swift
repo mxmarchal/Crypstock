@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CoinItemView: View {
-    let coin: Coin;
+    let coin: Coin
 
     var body: some  View {
         let currentValueFormatted = String(format: "%.2f", coin.currentValue)
@@ -22,7 +22,12 @@ struct CoinItemView: View {
                         Spacer()
                         VStack(alignment: .trailing) {
                             Text("1\(coin.shortName) = \(currentValueFormatted)$").fontWeight(.semibold)
-                            Text("12390 $USD").fontWeight(.bold).font(.title2)
+                            if let coinQuantityUnwrapped = coin.quantity {
+                                let coinQuantityValue = coinQuantityUnwrapped * coin.currentValue
+                                let coinQuantityValueFormatted = String(format: "%.2f", coinQuantityValue)
+                                Text("\(coinQuantityValueFormatted) $USD").fontWeight(.bold).font(.body)
+                                Text("\(Int(coinQuantityUnwrapped)) \(coin.shortName)").fontWeight(.bold).font(.body)
+                            }
                             //Check currencies swift google
                         }
                     }

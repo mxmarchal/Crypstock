@@ -10,6 +10,7 @@ import SwiftUI
 struct CoinDetailsView: View {
     @Binding var user: User
     @State var inputValue: Int = 0
+    @Binding var needRefresh: Bool
     let coin: Coin
     
     struct CoinDetailsInput: View {
@@ -39,6 +40,7 @@ struct CoinDetailsView: View {
     struct CoinDetailsButton: View {
         @Binding var user: User
         @Binding var inputValue: Int
+        @Binding var needRefresh: Bool
 
         let coin: Coin
         let text: String
@@ -51,6 +53,7 @@ struct CoinDetailsView: View {
                     let value = Double(inputValue)
                     if (value != 0) {
                         user.updateUserPotfolio(coin: coin, value: value, isSell: isSell)
+                        self.needRefresh.toggle()
                     }
                 }) {
                     Spacer()
@@ -108,8 +111,8 @@ struct CoinDetailsView: View {
             CoinItemView(coin: coin).frame(minWidth: 0, maxWidth: .infinity, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxHeight: 300, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             CoinDetailsInput(inputValue: $inputValue)
             HStack {
-                CoinDetailsButton(user:$user, inputValue: $inputValue, coin: coin, text: "Buy", colorHexa: "#e74c3c", isSell: false)
-                CoinDetailsButton(user:$user, inputValue: $inputValue, coin: coin, text: "Sell", colorHexa: "#27ae60", isSell: true)
+                CoinDetailsButton(user:$user, inputValue: $inputValue, needRefresh: $needRefresh, coin: coin, text: "Buy", colorHexa: "#e74c3c", isSell: false)
+                CoinDetailsButton(user:$user, inputValue: $inputValue, needRefresh: $needRefresh, coin: coin, text: "Sell", colorHexa: "#27ae60", isSell: true)
             }
             CoinDetailsTransactions()
         }
@@ -121,9 +124,10 @@ struct CoinDetailsView: View {
 struct CoinDetailsView_Previews_Container: View {
 
     @State private var user:User = User()
+    @State var needRefresh:Bool = false
     
     var body: some View {
-        CoinDetailsView(user: $user, coin: Coin(name: "Bitcoin", shortName: "BTC", colors: CoinColors(primary: "#FDC830", secondary: "#F37335"), values: [234.34, 324.23, 456.32, 600.1], currentValue: 220.30))
+        CoinDetailsView(user: $user, needRefresh: $needRefresh, coin: Coin(name: "Bitcoin", shortName: "BTC", colors: CoinColors(primary: "#FDC830", secondary: "#F37335"), values: [234.34, 324.23, 456.32, 600.1], currentValue: 220.30))
     }
 }
 

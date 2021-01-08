@@ -111,7 +111,9 @@ class User: Identifiable {
                         for coin in coins {
                             for portfolioCoin in res {
                                 if coin.shortName == portfolioCoin.coinName {
-                                    finalCoin.append(coin)
+                                    var appendCoin = coin
+                                    appendCoin.quantity = Double(portfolioCoin.coinQuantity)
+                                    finalCoin.append(appendCoin)
                                 }
                             }
                         }

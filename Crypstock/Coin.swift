@@ -18,6 +18,7 @@ struct Coin: Decodable {
     let colors: CoinColors
     let values: [Double]
     let currentValue: Double
+    var quantity: Double? = nil
 }
 
 extension Coin: Identifiable {
