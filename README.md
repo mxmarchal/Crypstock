@@ -52,11 +52,11 @@ There is a lot to improve on this application:
 
 ## Screenshots
 
-<img src="https://ibb.co/pjkkKvQ" width="30%">
-<img src="https://ibb.co/hghmGnX" width="30%">
-<img src="https://ibb.co/0cx15LQ" width="30%">
-<img src="https://ibb.co/QpQhVpH" width="30%">
-<img src="https://ibb.co/YBWLM9W" width="30%">
-<img src="https://ibb.co/C69vVms" width="30%">
-<img src="https://ibb.co/c8STVqt" width="30%">
-<img src="https://ibb.co/8d0wp37" width="30%">
+<img src="https://i.ibb.co/RTJJ6pN/landing.png" width="30%">
+<img src="https://i.ibb.co/NFQy0k1/signin.png" width="30%">
+<img src="https://i.ibb.co/7XqBhDb/Simulator-Screen-Shot-i-Phone-11-Pro-2021-01-08-at-16-23-17.png" width="30%">
+<img src="https://i.ibb.co/5G4C3Gj/Simulator-Screen-Shot-i-Phone-11-Pro-2021-01-08-at-16-23-32.png" width="30%">
+<img src="https://i.ibb.co/60ZWxhZ/Simulator-Screen-Shot-i-Phone-11-Pro-2021-01-08-at-16-23-44.png" width="30%">
+<img src="https://i.ibb.co/sC1QsbJ/Simulator-Screen-Shot-i-Phone-11-Pro-2021-01-08-at-16-24-12.png" width="30%">
+<img src="https://i.ibb.co/dpwKxZ6/Simulator-Screen-Shot-i-Phone-11-Pro-2021-01-08-at-16-24-18.png" width="30%">
+<img src="https://i.ibb.co/z7rgYc4/Simulator-Screen-Shot-i-Phone-11-Pro-2021-01-08-at-16-24-23.png" width="30%">
