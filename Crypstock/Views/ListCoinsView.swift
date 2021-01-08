@@ -19,7 +19,7 @@ struct ListCoinsView: View {
                 List(coinsData) {
                     coin in
                         ZStack {
-                            NavigationLink(destination: CoinDetailsView(coin: coin)) {
+                            NavigationLink(destination: CoinDetailsView(user: $user, coin: coin)) {
                             }.opacity(0.0)
                             CoinItemView(coin: coin)
                         }

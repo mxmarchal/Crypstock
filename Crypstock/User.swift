@@ -38,6 +38,7 @@ class User: Identifiable {
             let path = NSSearchPathForDirectoriesInDomains(
                 .documentDirectory, .userDomainMask, true
             ).first!
+            print(path)
             self.db = try Connection("\(path)/crypstock.sqlite3")
             print("DB created/opened")
         } catch {
@@ -106,5 +107,22 @@ class User: Identifiable {
         } catch {
             return nil;
         }
+    }
+    
+    func updateUserPotfolio(coin: Coin, value: Double, isSell: Bool) -> Bool{
+        if (userData == nil) {
+            return false
+        }
+        let uId = userData?.uId
+        if uId == nil {
+            return false
+        }
+        let unwrappedUId = uId!
+        var finalValue = value
+        if (isSell) {
+            finalValue *= -1
+        }
+        let res = portfolioManager!.updatePortfolio(uId: unwrappedUId, coinName: coin.shortName, value: finalValue)
+        return res
     }
 }

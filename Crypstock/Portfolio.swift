@@ -54,7 +54,38 @@ class Portfolio {
         }
     }
     
-    
-    
-    
+    func updatePortfolio(uId: Int64, coinName: String, value: Double) -> Bool {
+        print("\(uId) \(coinName) \(value)")
+        //GET from Portfolio WHERE uId & coinName
+        
+        do {
+            let query = try db!.pluck(portfolioTable.filter(cUId == uId).filter(cCoinName == coinName))
+            if query == nil {
+                if (value < 1) {
+                    return false;
+                }
+                try db!.run(portfolioTable.insert(cUId <- uId, cCoinName <- coinName, cCoinQuantity <- value))
+                return true
+            } else {
+                let queryQuantity = try query?.get(cCoinQuantity)
+                let unwrappedQuantity = queryQuantity!
+                let finalQuantity = unwrappedQuantity + value
+                if (finalQuantity < 0) {
+                    //value can't be negative
+                    return false
+                } else if (finalQuantity == 0) {
+                    //delete it from user portfolio
+                    try db!.run(portfolioTable.filter(cUId == uId).filter(cCoinName == coinName).delete())
+                    return true
+                } else {
+                    //Update id
+                    try db!.run(portfolioTable.filter(cUId == uId).filter(cCoinName == coinName).update(cCoinQuantity <- finalQuantity))
+                    return true
+                }
+            }
+        } catch {
+            print("An error occured while updating user's portfolio")
+            return false
+        }
+    }
 }
