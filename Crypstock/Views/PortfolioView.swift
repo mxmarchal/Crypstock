@@ -14,15 +14,28 @@ struct PortfolioView: View {
     
     var portfolioItems:Array<Any>? = nil;
 
-    func getPortfolioItems() -> Text {
-        user.getUserPortfolio()
-        return Text("Hey")
+    func getPortfolioItems() -> Array<Coin>? {
+        let coinsFinal: Array<Coin>? = user.getUserPortfolio()
+        return coinsFinal
     }
     
     var body: some View {
         NavigationView {
-            Text("You don't have any coins.")
-            getPortfolioItems()
+            if let coinsData = getPortfolioItems() {
+                if coinsData.count == 0 {
+                    Text("You don't have any coins.")
+                } else {
+                    List(coinsData) {
+                        coin in ZStack {
+                            NavigationLink(destination: CoinDetailsView(user: $user, coin: coin)) {
+                            }.opacity(0.0)
+                            CoinItemView(coin: coin)
+                        }
+                    }.navigationBarTitle("Your portfolio")
+                }
+            } else {
+                Text("You don't have any coins.")
+            }
         }
     }
 }

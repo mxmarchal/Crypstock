@@ -91,18 +91,35 @@ class User: Identifiable {
         }
     }
     
-    func getUserPortfolio() -> Array<Any>? {
+    func getUserPortfolio() -> Array<Coin>? {
         do {
             if (userData == nil) {
                 return nil;
             }
             let uId = userData?.uId
             if (uId == nil) {
-                return nil;
+                return nil
             } else {
                 let unwrappedUId = uId!
-                let res = portfolioManager?.getPortfolio(uId: unwrappedUId)
-                return res;
+                let res = portfolioManager!.getPortfolio(uId: unwrappedUId)
+                if (res.count == 0) {
+                    return nil;
+                } else {
+                    var finalCoin: [Coin] = []
+                    let coinsJSON: [Coin]? = Coins().loadCoinsFromJSON()
+                    if let coins = coinsJSON {
+                        for coin in coins {
+                            for portfolioCoin in res {
+                                if coin.shortName == portfolioCoin.coinName {
+                                    finalCoin.append(coin)
+                                }
+                            }
+                        }
+                        return finalCoin
+                    } else {
+                        return nil
+                    }
+                }
             }
         } catch {
             return nil;

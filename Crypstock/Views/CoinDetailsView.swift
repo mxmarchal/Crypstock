@@ -98,7 +98,6 @@ struct CoinDetailsView: View {
                             .font(.subheadline)
                             .foregroundColor(Color.gray)
                     }
-                    
                 }
             }
         }

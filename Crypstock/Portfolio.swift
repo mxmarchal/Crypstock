@@ -8,6 +8,11 @@
 import Foundation
 import SQLite
 
+struct PortfolioModel {
+    var coinName: String;
+    var coinQuantity: Double;
+}
+
 class Portfolio {
     var db: Connection? = nil;
     let portfolioTable = Table("portfolio")
@@ -41,16 +46,20 @@ class Portfolio {
         }
     }
     
-    func getPortfolio(uId: Int64) -> Array<Any>? {
+    func getPortfolio(uId: Int64) -> Array<PortfolioModel> {
+        var portfolioData: Array<PortfolioModel> = [];
         do {
             let query = Array(try db!.prepare(portfolioTable.filter(cUId == uId)))
-            print("[DEBUG] Get Portfolio here")
-            //let query = Array(portfolioTable.filter(cUId == uId))
-            print(query)
-            return []
+            for row in query {
+                let coinName = try row.get(cCoinName)
+                let coinQuantity = try row.get(cCoinQuantity)
+                let convertModel = PortfolioModel(coinName: coinName, coinQuantity: coinQuantity)
+                portfolioData.append(convertModel)
+            }
+            return portfolioData
         } catch {
             print("An error occured while getting user's portfolio")
-            return nil
+            return []
         }
     }
     
