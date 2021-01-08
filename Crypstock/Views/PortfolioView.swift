@@ -24,7 +24,7 @@ struct PortfolioView: View {
         NavigationView {
             if let coinsData = getPortfolioItems() {
                 if coinsData.count == 0 {
-                    Text("You don't have any coins.")
+                    Text("portfolioNoCoins")
                 } else {
                     List(coinsData) {
                         coin in ZStack {
@@ -32,12 +32,12 @@ struct PortfolioView: View {
                             }.opacity(0.0)
                             CoinItemView(coin: coin)
                         }
-                    }.navigationBarTitle("Your portfolio")
+                    }.navigationBarTitle("portfolioListTitle")
                 }
             } else {
-                Text("You don't have any coins.")
+                Text("portfolioNoCoins")
             }
-        }.accentColor(self.needRefresh ? .white : .black)
+        }.zIndex(self.needRefresh ? 1.0 : 1.1)
     }
 }
 

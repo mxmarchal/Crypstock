@@ -15,6 +15,9 @@ struct SignInView: View {
     @State var username: String = "max@max"
     @State var password: String = "max"
     
+    //Alert
+    @State private var showingAlert = false
+    
 
     let backgroundGradientColors: Gradient = Gradient(colors: [Color(red: 0.0, green: 0.7058823529, blue: 0.8588235294), Color(red: 0, green: 0.5137254902, blue: 0.6901960784)])
     
@@ -25,7 +28,7 @@ struct SignInView: View {
             Image("logo")
                 ZStack {
                     VStack {
-                        Text("Sign In")
+                        Text("signInPageTitle")
                             .fontWeight(.bold)
                             .multilineTextAlignment(.leading)
                             .padding(.horizontal, 23.0)
@@ -33,14 +36,14 @@ struct SignInView: View {
                             .font(.title)
                         HStack {
                             Image(systemName: "person").foregroundColor(.secondary)
-                            TextField("E-mail", text: $username).foregroundColor(.black).autocapitalization(.none)
+                            TextField("signInPageEmail", text: $username).foregroundColor(.black).autocapitalization(.none)
                         }
                         .padding()
                         .background(Color.white)
                         .cornerRadius(10)
                         HStack {
                             Image(systemName: "person").foregroundColor(.secondary)
-                            SecureField("Password", text: $password).foregroundColor(.black)
+                            SecureField("signInPagePassword", text: $password).foregroundColor(.black)
                         }
                         .padding()
                         .background(Color.white)
@@ -52,10 +55,14 @@ struct SignInView: View {
                                     let requestStatus = user.getUser(inputEmail: username, inputPassword: password)
                                     if requestStatus {
                                         childView = "APP"
+                                    } else {
+                                        self.showingAlert = true
                                     }
                                 }, label: {
-                                    Text("Continue ")
-                                })
+                                    Text("signInPageButton")
+                                }).alert(isPresented: $showingAlert) {
+                                    Alert(title: Text("signInPageAlertTitle"), message: Text("signInPageAlertMessage"), dismissButton: .default(Text("signInPageAlertButton")))
+                                }
                             }
                             .padding()
                             .background(Color.white)

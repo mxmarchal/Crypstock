@@ -43,12 +43,12 @@ struct LandingButtons: View {
             Button(action: {
                 childView = "SIGNIN_VIEW"
             }) {
-                Text("Sign In").modifier(ButtonTextStyle())
+                Text("landingSignInButton").modifier(ButtonTextStyle())
             }.modifier(ButtonStyle())
             Button(action: {
                 childView = "SIGNUP_VIEW"
             }) {
-                Text("Sign Up").modifier(ButtonTextStyle())
+                Text("landingSignUpButton").modifier(ButtonTextStyle())
             }.modifier(ButtonStyle())
         }.padding([.leading, .trailing], 40).padding(.top, 60)
     }

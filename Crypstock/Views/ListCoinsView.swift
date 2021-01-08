@@ -25,7 +25,7 @@ struct ListCoinsView: View {
                             CoinItemView(coin: coin)
                         }
                 }
-                .navigationBarTitle("Coins available")
+                .navigationBarTitle("coinsAvailableListTitle")
             }
         }
     }

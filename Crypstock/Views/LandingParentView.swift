@@ -24,11 +24,11 @@ struct LandingParentView: View {
                 TabView {
                     PortfolioView(childView: $childView, user: $user, needRefresh: $needRefresh).tabItem {
                             Image(systemName: "phone.fill")
-                            Text("Portfolio")
+                            Text("tabBarPortfolio")
                          }
                     ListCoinsView(childView: $childView, user: $user, needRefresh: $needRefresh).tabItem {
                         Image(systemName: "phone.fill")
-                        Text("Coins Available")
+                        Text("tabBarAvailableCoins")
                     }
                 }
         }

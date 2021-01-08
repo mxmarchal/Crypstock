@@ -82,12 +82,14 @@ class User: Identifiable {
         }
     }
     
-    func createUser(inputEmail: String, inputPassword: String) {
+    func createUser(inputEmail: String, inputPassword: String) -> Bool {
         do {
             let rowId = try db!.run(usersTable.insert(cEmail <- inputEmail, cPassword <- inputPassword))
-            print("User \(inputEmail) added. (RowID: \(rowId))")
+            print("User \(inputEmail) added. (RowID: \(rowId))");
+            return true;
         } catch {
             print("An error occured while inserting user into 'users' table")
+            return false;
         }
     }
     

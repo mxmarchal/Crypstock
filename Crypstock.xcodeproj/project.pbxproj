@@ -18,6 +18,7 @@
 		583ACDB825A7AD8A00B1B4D1 /* Portfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583ACDB725A7AD8A00B1B4D1 /* Portfolio.swift */; };
 		583ACDBD25A7C4B100B1B4D1 /* CoinDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583ACDBC25A7C4B100B1B4D1 /* CoinDetailsView.swift */; };
 		583ACDC225A7CA2800B1B4D1 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583ACDC125A7CA2800B1B4D1 /* Transaction.swift */; };
+		583ACDF625A8815900B1B4D1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 583ACDF825A8815900B1B4D1 /* Localizable.strings */; };
 		589B0CA625950404002C8BA0 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 589B0CA525950404002C8BA0 /* SQLite */; };
 		589B0CAE259650E3002C8BA0 /* currencies.json in Resources */ = {isa = PBXBuildFile; fileRef = 589B0CAD259650E3002C8BA0 /* currencies.json */; };
 		589B0CB625972095002C8BA0 /* Coins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589B0CB525972095002C8BA0 /* Coins.swift */; };
@@ -60,6 +61,8 @@
 		583ACDB725A7AD8A00B1B4D1 /* Portfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portfolio.swift; sourceTree = "<group>"; };
 		583ACDBC25A7C4B100B1B4D1 /* CoinDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailsView.swift; sourceTree = "<group>"; };
 		583ACDC125A7CA2800B1B4D1 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Transaction.swift; path = Views/Transaction.swift; sourceTree = "<group>"; };
+		583ACDF725A8815900B1B4D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		583ACDFC25A8816900B1B4D1 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		589B0CAD259650E3002C8BA0 /* currencies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = currencies.json; path = Crypstock/currencies.json; sourceTree = SOURCE_ROOT; };
 		589B0CB525972095002C8BA0 /* Coins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coins.swift; sourceTree = "<group>"; };
 		589B0CBA25989379002C8BA0 /* CoinItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinItemViewModel.swift; sourceTree = "<group>"; };
@@ -150,6 +153,7 @@
 		58B86C1D257D456A0072782B /* Crypstock */ = {
 			isa = PBXGroup;
 			children = (
+				583ACDF825A8815900B1B4D1 /* Localizable.strings */,
 				583ACDC125A7CA2800B1B4D1 /* Transaction.swift */,
 				583ACDB725A7AD8A00B1B4D1 /* Portfolio.swift */,
 				589B0CAD259650E3002C8BA0 /* currencies.json */,
@@ -281,6 +285,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 58B86C12257D45690072782B;
 			packageReferences = (
@@ -303,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58B86C26257D456D0072782B /* Preview Assets.xcassets in Resources */,
+				583ACDF625A8815900B1B4D1 /* Localizable.strings in Resources */,
 				58B86C23257D456D0072782B /* Assets.xcassets in Resources */,
 				589B0CAE259650E3002C8BA0 /* currencies.json in Resources */,
 			);
@@ -379,11 +385,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		583ACDF825A8815900B1B4D1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				583ACDF725A8815900B1B4D1 /* en */,
+				583ACDFC25A8816900B1B4D1 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		58B86C3E257D456D0072782B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -445,6 +464,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

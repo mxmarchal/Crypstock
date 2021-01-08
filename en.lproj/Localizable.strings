@@ -1,0 +1,52 @@
+/* 
+  Localizable.strings
+  Crypstock
+
+  Created by Maxence Marchal on 08/01/2021.
+  
+*/
+//TabBar
+"tabBarPortfolio" = "Portfolio";
+"tabBarAvailableCoins" = "Coins Available";
+
+//LandingPage
+"landingSignInButton" = "Sign In";
+"landingSignUpButton" = "Sign Up";
+
+//SignInPage
+"signInPageTitle" = "Sign In";
+"signInPageEmail" = "E-mail";
+"signInPagePassword" = "Password";
+"signInPageButton" = "Continue ";
+"signInPageAlertTitle" = "Error";
+"signInPageAlertMessage" = "This account doesn't exist.";
+"signInPageAlertButton" = "Ok";
+
+//SignUpPage
+"signUpPageTitle" = "Sign Up";
+"signUpPageEmail" = "E-mail";
+"signUpPagePassword" = "Password";
+"signUpPageButton" = "Continue ";
+"signUpPageAlertTitle" = "Error";
+"signUpPageAlertMessage" = "Please, verify your informations entered / you don't have already an account.";
+"signUpPageAlertButton" = "Ok";
+
+//Portfolio
+"portfolioListTitle" = "Your Portfolio";
+"portfolioNoCoins" = "You don't have any coins.";
+
+//Coins Available
+"coinsAvailableListTitle" = "Coins Available";
+
+//Coin details
+"coinDetailsButtonBuy" = "Buy";
+"coinDetailsButtonSell" = "Sell";
+"coinDetailsTransactionTitle" = "Transactions";
+"coinDetailsNoTransaction" = "No transaction recored.";
+"coinDetailsAlertErrorTitle" = "Error";
+"coinDetailsAlertErrorMessage" = "Make sure you have the necessary funds for this operation.";
+"coinDetailsAlertErrorButton" = "Ok";
+"coinDetailsAlertNoValueTitle" = "Error";
+"coinDetailsAlertNoValueMessage" = "You can't buy or sell 0 amount of coin.";
+"coinDetailsAlertNoValueButton" = "Ok";
+

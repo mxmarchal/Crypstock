@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  Crypstock
+
+  Created by Maxence Marchal on 08/01/2021.
+  
+*/
+
+"landingSignInButton" = "Sign In";
+"landingSignUpButton" = "Sign Up";

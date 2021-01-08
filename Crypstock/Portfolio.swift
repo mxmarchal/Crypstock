@@ -64,9 +64,6 @@ class Portfolio {
     }
     
     func updatePortfolio(uId: Int64, coinName: String, value: Double) -> Bool {
-        print("\(uId) \(coinName) \(value)")
-        //GET from Portfolio WHERE uId & coinName
-        
         do {
             let query = try db!.pluck(portfolioTable.filter(cUId == uId).filter(cCoinName == coinName))
             if query == nil {

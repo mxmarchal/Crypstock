@@ -14,6 +14,9 @@ struct SignUpView: View {
     //form
     @State var username: String = ""
     @State var password: String = ""
+    
+    //Alert
+    @State private var showingAlert = false
 
     let backgroundGradientColors: Gradient = Gradient(colors: [Color(red: 0.0, green: 0.7058823529, blue: 0.8588235294), Color(red: 0, green: 0.5137254902, blue: 0.6901960784)])
     var body: some View {
@@ -23,7 +26,7 @@ struct SignUpView: View {
             Image("logo")
                 ZStack {
                     VStack {
-                        Text("Sign Up")
+                        Text("signUpPageTitle")
                             .fontWeight(.bold)
                             .multilineTextAlignment(.leading)
                             .padding(.horizontal, 23.0)
@@ -31,14 +34,14 @@ struct SignUpView: View {
                             .font(.title)
                         HStack {
                             Image(systemName: "person").foregroundColor(.secondary)
-                            TextField("E-mail", text: $username).foregroundColor(.black).autocapitalization(.none)
+                            TextField("signUpPageEmail", text: $username).foregroundColor(.black).autocapitalization(.none)
                         }
                         .padding()
                         .background(Color.white)
                         .cornerRadius(10)
                         HStack {
                             Image(systemName: "person").foregroundColor(.secondary)
-                            SecureField("Password", text: $password).foregroundColor(.black)
+                            SecureField("signUpPagePassword", text: $password).foregroundColor(.black)
                         }
                         .padding()
                         .background(Color.white)
@@ -47,13 +50,18 @@ struct SignUpView: View {
                             Spacer()
                             HStack {
                                 Button(action: {
-                                    print(username)
-                                    print(password)
-                                    user.createUser(inputEmail: username, inputPassword: password)
-                                    childView = "SIGNIN_VIEW"
+                                    let confirmUser: Bool = user.createUser(inputEmail: username, inputPassword: password)
+                                    if (confirmUser) {
+                                        childView = "SIGNIN_VIEW"
+                                    } else {
+                                        self.showingAlert = true
+                                    }
+                                    //Show alert that say no
                                 }, label: {
-                                    Text("Continue ")
-                                })
+                                    Text("signUpPageButton")
+                                }).alert(isPresented: $showingAlert) {
+                                    Alert(title: Text("signUpPageAlertTitle"), message: Text("signUpPageAlertMessage"), dismissButton: .default(Text("signUpPageAlertButton")))
+                                }
                             }
                             .padding()
                             .background(Color.white)
