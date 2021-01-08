@@ -44,7 +44,7 @@ struct CoinItemView: View {
     struct CoinItemGraph: View {
         let graphData: [Double]
         let maxWidth: Double = 300.0
-        let maxHeight: Double = 200.0
+        let maxHeight: Double = 145.0
 
         func generateGraph() -> Path {
             var graph = Path()
