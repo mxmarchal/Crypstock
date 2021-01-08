@@ -1,0 +1,52 @@
+/* 
+  Localizable.strings
+  Crypstock
+
+  Created by Maxence Marchal on 08/01/2021.
+  
+*/
+//TabBar
+"tabBarPortfolio" = "Cartera";
+"tabBarAvailableCoins" = "Monedas disponibles";
+
+//LandingPage
+"landingSignInButton" = "Ingresa";
+"landingSignUpButton" = "Regístrate";
+
+//SignInPage
+"signInPageTitle" = "Ingresa";
+"signInPageEmail" = "E-mail";
+"signInPagePassword" = "Contraseña";
+"signInPageButton" = "Continúa ";
+"signInPageAlertTitle" = "Error";
+"signInPageAlertMessage" = "Esta cuenta no existe.";
+"signInPageAlertButton" = "Ok";
+
+//SignUpPage
+"signUpPageTitle" = "Regístrate";
+"signUpPageEmail" = "E-mail";
+"signUpPagePassword" = "Contraseña";
+"signUpPageButton" = "Continúa ";
+"signUpPageAlertTitle" = "Error";
+"signUpPageAlertMessage" = "Por favor, verifique sus datos introducidos / no tiene ya una cuenta.";
+"signUpPageAlertButton" = "Ok";
+
+//Portfolio
+"portfolioListTitle" = "Mi Catera";
+"portfolioNoCoins" = "No tienes monedas.";
+
+//Coins Available
+"coinsAvailableListTitle" = "Monedas Disponibles";
+
+//Coin details
+"coinDetailsButtonBuy" = "Compra";
+"coinDetailsButtonSell" = "Vender";
+"coinDetailsTransactionTitle" = "Transacciones";
+"coinDetailsNoTransaction" = "No se registró ninguna transacción.";
+"coinDetailsAlertErrorTitle" = "Error";
+"coinDetailsAlertErrorMessage" = "Asegúrate de que tienes los fondos necesarios para esta operación.";
+"coinDetailsAlertErrorButton" = "Ok";
+"coinDetailsAlertNoValueTitle" = "Error";
+"coinDetailsAlertNoValueMessage" = "No puedes comprar o vender 0 cantidad de moneda.";
+"coinDetailsAlertNoValueButton" = "Ok";
+

@@ -1,10 +1,52 @@
-/* 
+/*
   Localizable.strings
   Crypstock
 
   Created by Maxence Marchal on 08/01/2021.
   
 */
+//TabBar
+"tabBarPortfolio" = "Porte-feuille";
+"tabBarAvailableCoins" = "Crypto dispo.";
 
-"landingSignInButton" = "Sign In";
-"landingSignUpButton" = "Sign Up";
+//LandingPage
+"landingSignInButton" = "Connexion";
+"landingSignUpButton" = "Inscription";
+
+//SignInPage
+"signInPageTitle" = "Connexion";
+"signInPageEmail" = "E-mail";
+"signInPagePassword" = "Mot de passe";
+"signInPageButton" = "Continuer ";
+"signInPageAlertTitle" = "Erreur";
+"signInPageAlertMessage" = "Ce compte n'existe pas.";
+"signInPageAlertButton" = "Ok";
+
+//SignUpPage
+"signUpPageTitle" = "Inscription";
+"signUpPageEmail" = "E-mail";
+"signUpPagePassword" = "Mot de passe";
+"signUpPageButton" = "Continuer ";
+"signUpPageAlertTitle" = "Erreur";
+"signUpPageAlertMessage" = "Merci de vérifier vos informations ou que vous n'ayez déjà pas un compte.";
+"signUpPageAlertButton" = "Ok";
+
+//Portfolio
+"portfolioListTitle" = "Votre Porte-Feuille";
+"portfolioNoCoins" = "Vous n'avez aucun actif.";
+
+//Coins Available
+"coinsAvailableListTitle" = "Crypto Disponibles";
+
+//Coin details
+"coinDetailsButtonBuy" = "Acheter";
+"coinDetailsButtonSell" = "Vendre";
+"coinDetailsTransactionTitle" = "Transactions";
+"coinDetailsNoTransaction" = "Aucune transactions enregistrées";
+"coinDetailsAlertErrorTitle" = "Erreur";
+"coinDetailsAlertErrorMessage" = "Vérifier que vous ayez les fonds nécessaires pour cette opération.";
+"coinDetailsAlertErrorButton" = "Ok";
+"coinDetailsAlertNoValueTitle" = "Erreur";
+"coinDetailsAlertNoValueMessage" = "Vous ne pouvez pas acheter ou vendre une quantité nulle de pièces.";
+"coinDetailsAlertNoValueButton" = "Ok";
+

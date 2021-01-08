@@ -63,6 +63,7 @@
 		583ACDC125A7CA2800B1B4D1 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Transaction.swift; path = Views/Transaction.swift; sourceTree = "<group>"; };
 		583ACDF725A8815900B1B4D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		583ACDFC25A8816900B1B4D1 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		583ACE0025A88DF300B1B4D1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		589B0CAD259650E3002C8BA0 /* currencies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = currencies.json; path = Crypstock/currencies.json; sourceTree = SOURCE_ROOT; };
 		589B0CB525972095002C8BA0 /* Coins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coins.swift; sourceTree = "<group>"; };
 		589B0CBA25989379002C8BA0 /* CoinItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinItemViewModel.swift; sourceTree = "<group>"; };
@@ -286,6 +287,7 @@
 				en,
 				Base,
 				fr,
+				es,
 			);
 			mainGroup = 58B86C12257D45690072782B;
 			packageReferences = (
@@ -391,6 +393,7 @@
 			children = (
 				583ACDF725A8815900B1B4D1 /* en */,
 				583ACDFC25A8816900B1B4D1 /* fr */,
+				583ACE0025A88DF300B1B4D1 /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = SOURCE_ROOT;
