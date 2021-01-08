@@ -20,6 +20,7 @@
 		583ACDC225A7CA2800B1B4D1 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583ACDC125A7CA2800B1B4D1 /* Transaction.swift */; };
 		583ACDF625A8815900B1B4D1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 583ACDF825A8815900B1B4D1 /* Localizable.strings */; };
 		583ACE0825A8AD8B00B1B4D1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 583ACE0725A8AD8B00B1B4D1 /* README.md */; };
+		583ACE0D25A8B7A500B1B4D1 /* PortfolioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583ACE0C25A8B7A500B1B4D1 /* PortfolioTests.swift */; };
 		589B0CA625950404002C8BA0 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 589B0CA525950404002C8BA0 /* SQLite */; };
 		589B0CAE259650E3002C8BA0 /* currencies.json in Resources */ = {isa = PBXBuildFile; fileRef = 589B0CAD259650E3002C8BA0 /* currencies.json */; };
 		589B0CB625972095002C8BA0 /* Coins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589B0CB525972095002C8BA0 /* Coins.swift */; };
@@ -65,6 +66,7 @@
 		583ACDFC25A8816900B1B4D1 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		583ACE0025A88DF300B1B4D1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		583ACE0725A8AD8B00B1B4D1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		583ACE0C25A8B7A500B1B4D1 /* PortfolioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioTests.swift; sourceTree = "<group>"; };
 		589B0CAD259650E3002C8BA0 /* currencies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = currencies.json; path = Crypstock/currencies.json; sourceTree = SOURCE_ROOT; };
 		589B0CB525972095002C8BA0 /* Coins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coins.swift; sourceTree = "<group>"; };
 		58B86C1B257D456A0072782B /* Crypstock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypstock.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,6 +185,7 @@
 		58B86C2F257D456D0072782B /* CrypstockTests */ = {
 			isa = PBXGroup;
 			children = (
+				583ACE0C25A8B7A500B1B4D1 /* PortfolioTests.swift */,
 				58B86C30257D456D0072782B /* CrypstockTests.swift */,
 				58B86C32257D456D0072782B /* Info.plist */,
 			);
@@ -360,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				583ACE0D25A8B7A500B1B4D1 /* PortfolioTests.swift in Sources */,
 				58B86C31257D456D0072782B /* CrypstockTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

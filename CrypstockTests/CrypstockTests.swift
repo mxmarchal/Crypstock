@@ -49,8 +49,8 @@ class CrypstockTests: XCTestCase {
     func testUserSignIn() throws {
         let user = User()
 
-        let createUser = try user.getUser(inputEmail: "maxm@max", inputPassword: "max")
-        XCTAssert(createUser == true, "User is signIn.")
+        let signInUser = try user.getUser(inputEmail: "maxm@max", inputPassword: "max")
+        XCTAssert(signInUser == true, "User is signIn.")
     }
 
     func testPerformanceExample() throws {
